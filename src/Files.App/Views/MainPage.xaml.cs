@@ -1,4 +1,4 @@
-// Copyright (c) Files Community
+﻿// Copyright (c) Files Community
 // Licensed under the MIT License.
 
 using CommunityToolkit.WinUI;
@@ -447,6 +447,11 @@ namespace Files.App.Views
 				HandleSidebarTabChange();
 		}
 
+		private void ExplorerShell_Loaded(object sender, RoutedEventArgs e)
+		{
+			ExplorerShell.ActiveTabChrome = Ioc.Default.GetRequiredService<IContentPageContext>().ShellPage as IExplorerTabChrome;
+		}
+
 		private void HandleSidebarTabChange()
 		{
 			if (_previousSidebarTab is not null)
@@ -454,6 +459,7 @@ namespace Files.App.Views
 
 			var newTab = ViewModel.SelectedTabItem;
 			_previousSidebarTab = newTab;
+			ExplorerShell.ActiveTabChrome = Ioc.Default.GetRequiredService<IContentPageContext>().ShellPage as IExplorerTabChrome;
 
 			if (newTab is null)
 				return;

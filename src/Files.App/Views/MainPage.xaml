@@ -5,6 +5,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
 	xmlns:controls="using:Files.App.Controls"
+	xmlns:xpshell="using:Files.App.Views.Shells"
 	xmlns:converters="using:Files.App.Converters"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:helpers="using:Files.App.Helpers"
@@ -137,16 +138,11 @@
 		</KeyboardAccelerator>
 	</Page.KeyboardAccelerators>
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="*" />
-		</Grid.RowDefinitions>
+	<xpshell:XpExplorerShell x:Name="ExplorerShell" Loaded="ExplorerShell_Loaded">
 
 		<!--  Background Image  -->
 		<Image
-			Grid.RowSpan="3"
+			Grid.RowSpan="6"
 			HorizontalAlignment="{x:Bind ViewModel.AppThemeBackgroundImageHorizontalAlignment, Mode=OneWay}"
 			VerticalAlignment="{x:Bind ViewModel.AppThemeBackgroundImageVerticalAlignment, Mode=OneWay}"
 			Opacity="{x:Bind ViewModel.AppThemeBackgroundImageOpacity, Mode=OneWay}"
@@ -164,7 +160,7 @@
 		<!--  Address Bar  -->
 		<uc:NavigationToolbar
 			x:Name="NavToolbar"
-			Grid.Row="1"
+			Grid.Row="2"
 			HorizontalAlignment="Stretch"
 			HorizontalContentAlignment="Stretch"
 			x:Load="False"
@@ -175,7 +171,7 @@
 		<!--  Content Area  -->
 		<controls:SidebarView
 			x:Name="SidebarControl"
-			Grid.Row="2"
+			Grid.Row="4"
 			HorizontalAlignment="Stretch"
 			HorizontalContentAlignment="Stretch"
 			DisplayMode="{x:Bind SidebarAdaptiveViewModel.SidebarDisplayMode, Mode=TwoWay}"
@@ -377,7 +373,7 @@
 		<!--  Review Files Prompt  -->
 		<TeachingTip
 			Title="{helpers:ResourceString Name=Hello}"
-			Grid.RowSpan="3"
+			Grid.RowSpan="6"
 			HorizontalAlignment="Center"
 			VerticalAlignment="Bottom"
 			ActionButtonCommand="{x:Bind ViewModel.ReviewAppCommand}"
@@ -390,7 +386,7 @@
 		<!--  Sponsor Prompt  -->
 		<TeachingTip
 			Title="{helpers:ResourceString Name=Hello}"
-			Grid.RowSpan="3"
+			Grid.RowSpan="6"
 			HorizontalAlignment="Center"
 			VerticalAlignment="Bottom"
 			ActionButtonCommand="{x:Bind ViewModel.SponsorCommand}"
@@ -496,5 +492,5 @@
 			</VisualStateGroup>
 
 		</VisualStateManager.VisualStateGroups>
-	</Grid>
+	</xpshell:XpExplorerShell>
 </Page>
