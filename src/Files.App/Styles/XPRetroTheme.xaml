@@ -5,11 +5,11 @@
 
 	<ResourceDictionary.ThemeDictionaries>
 		<ResourceDictionary x:Key="Light">
-			<Color x:Key="AccentFillColorDefault">#FF245EDC</Color>
-			<Color x:Key="AccentFillColorSecondary">#FF316AC5</Color>
+			<Color x:Key="AccentFillColorDefault">#FF3F6F96</Color>
+			<Color x:Key="AccentFillColorSecondary">#FF4F78A1</Color>
 			<Color x:Key="AccentFillColorTertiary">#FF1C4FA1</Color>
-			<SolidColorBrush x:Key="AccentFillColorDefaultBrush" Color="#FF245EDC" />
-			<SolidColorBrush x:Key="AccentFillColorSecondaryBrush" Color="#FF316AC5" />
+			<SolidColorBrush x:Key="AccentFillColorDefaultBrush" Color="#FF3F6F96" />
+			<SolidColorBrush x:Key="AccentFillColorSecondaryBrush" Color="#FF4F78A1" />
 			<SolidColorBrush x:Key="AccentFillColorTertiaryBrush" Color="#FF1C4FA1" />
 
 			<Color x:Key="ControlFillColorDefault">#FFECE9D8</Color>
@@ -47,29 +47,29 @@
 			<!-- Luna Explorer primitives: use shallow gradients and crisp bevel edges, never acrylic or soft elevation. -->
 			<FontFamily x:Key="Xp.FontFamily">Tahoma, Segoe UI, Arial</FontFamily>
 			<CornerRadius x:Key="Xp.ControlCornerRadius">2</CornerRadius>
-			<Color x:Key="Xp.Selection.Active">#FF316AC5</Color>
-			<Color x:Key="Xp.Selection.Inactive">#FFC1D2EE</Color>
+			<Color x:Key="Xp.Selection.Active">#FF4F78A1</Color>
+			<Color x:Key="Xp.Selection.Inactive">#FFDCE8F4</Color>
 			<SolidColorBrush x:Key="Xp.Selection.ActiveBrush" Color="{StaticResource Xp.Selection.Active}" />
 			<SolidColorBrush x:Key="Xp.Selection.InactiveBrush" Color="{StaticResource Xp.Selection.Inactive}" />
 			<SolidColorBrush x:Key="Xp.BorderBrush" Color="#FF7F9DB9" />
 			<SolidColorBrush x:Key="Xp.HighlightBrush" Color="#FFFFFFFF" />
 			<SolidColorBrush x:Key="Xp.ShadowBrush" Color="#FFACA899" />
 			<LinearGradientBrush x:Key="Xp.TitleBarBrush" StartPoint="0,0" EndPoint="0,1">
-				<GradientStop Offset="0" Color="#FF3A6EA5" />
-				<GradientStop Offset="0.48" Color="#FF245EDC" />
-				<GradientStop Offset="1" Color="#FF0A246A" />
+				<GradientStop Offset="0" Color="#FF5F87A8" />
+				<GradientStop Offset="0.48" Color="#FF3F6F96" />
+				<GradientStop Offset="1" Color="#FF2D4F6C" />
 			</LinearGradientBrush>
 			<LinearGradientBrush x:Key="Xp.ToolbarBrush" StartPoint="0,0" EndPoint="0,1">
 				<GradientStop Offset="0" Color="#FFFFFEF7" />
 				<GradientStop Offset="1" Color="#FFECE9D8" />
 			</LinearGradientBrush>
 			<LinearGradientBrush x:Key="Xp.TaskPaneBrush" StartPoint="0,0" EndPoint="0,1">
-				<GradientStop Offset="0" Color="#FFD6E7FF" />
-				<GradientStop Offset="1" Color="#FFEEF6FF" />
+				<GradientStop Offset="0" Color="#FFE7F0F7" />
+				<GradientStop Offset="1" Color="#FFF8FBFD" />
 			</LinearGradientBrush>
 			<LinearGradientBrush x:Key="Xp.TaskHeaderBrush" StartPoint="0,0" EndPoint="0,1">
-				<GradientStop Offset="0" Color="#FF5BA2E3" />
-				<GradientStop Offset="1" Color="#FF0A64AD" />
+				<GradientStop Offset="0" Color="#FF86A9C3" />
+				<GradientStop Offset="1" Color="#FF4F789A" />
 			</LinearGradientBrush>
 			<Style TargetType="TextBlock">
 				<Setter Property="FontFamily" Value="{StaticResource Xp.FontFamily}" />
