@@ -139,7 +139,9 @@ Invoke-Checked $MSBuild @(
     "-t:Restore",
     "-p:Platform=$Architecture",
     "-p:Configuration=$Configuration",
-    "-p:PublishReadyToRun=true",
+    # The XP Retro workflow restores without a runtime identifier. Disable ReadyToRun
+    # so publish does not require a RID-specific runtime optimization package.
+    "-p:PublishReadyToRun=false",
     "-v:minimal"
 )
 
