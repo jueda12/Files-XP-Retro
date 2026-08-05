@@ -36,16 +36,18 @@ if (-not $package) {
     throw "No Files XP Retro MSIX package was found."
 }
 
+$architecture = [Environment]::GetEnvironmentVariable("PROCESSOR_ARCHITECTURE")
 $dependencies = @(
     Get-ChildItem $PackageRoot -Recurse -Include *.appx, *.msix |
         Where-Object {
-            $_.FullName -match "\\Dependencies\\" -and
-            $_.FullName -ne $package.FullName
+            $_.FullName -match "\Dependencies\\" -and
+            $_.FullName -ne $package.FullName -and
+            $_.Directory.Name -ieq $architecture
         } |
         ForEach-Object { $_.FullName }
 )
 
-Write-Host "Installing the Files XP Retro test certificate for the current user..."
+Write-Host "Installing the Files XP Retro test certificate for this computer..."
 Import-Certificate `
     -FilePath $CertificatePath `
     -CertStoreLocation "Cert:\LocalMachine\TrustedPeople" |
