@@ -67,6 +67,10 @@
 				<GradientStop Offset="0" Color="#FFD6E7FF" />
 				<GradientStop Offset="1" Color="#FFEEF6FF" />
 			</LinearGradientBrush>
+			<LinearGradientBrush x:Key="Xp.TaskHeaderBrush" StartPoint="0,0" EndPoint="0,1">
+				<GradientStop Offset="0" Color="#FF5BA2E3" />
+				<GradientStop Offset="1" Color="#FF0A64AD" />
+			</LinearGradientBrush>
 			<Style TargetType="TextBlock">
 				<Setter Property="FontFamily" Value="{StaticResource Xp.FontFamily}" />
 			</Style>
