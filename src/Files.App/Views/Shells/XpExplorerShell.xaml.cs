@@ -7,6 +7,19 @@ namespace Files.App.Views.Shells
 {
 	public sealed partial class XpExplorerShell : UserControl
 	{
+		/// <summary>
+		/// Navigation state for the currently active Files tab. The shell observes
+		/// this existing Files contract and never creates a second history/path model.
+		/// </summary>
+		public IExplorerTabChrome? ActiveTabChrome
+		{
+			get => (IExplorerTabChrome?)GetValue(ActiveTabChromeProperty);
+			set => SetValue(ActiveTabChromeProperty, value);
+		}
+
+		public static readonly DependencyProperty ActiveTabChromeProperty =
+			DependencyProperty.Register(nameof(ActiveTabChrome), typeof(IExplorerTabChrome), typeof(XpExplorerShell), new PropertyMetadata(null));
+
 		public UIElement? TitleTabContent
 		{
 			get => (UIElement?)GetValue(TitleTabContentProperty);
