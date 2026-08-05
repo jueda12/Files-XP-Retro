@@ -1,4 +1,6 @@
-// Copyright (c) Files Community. Licensed under the MIT License.
+﻿// Copyright (c) Files Community. Licensed under the MIT License.
+
+using Microsoft.UI.Xaml;
 
 namespace Files.App.Views.Shells
 {
