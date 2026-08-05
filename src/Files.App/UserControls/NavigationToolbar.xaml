@@ -62,13 +62,14 @@
 	</UserControl.Resources>
 
 	<Grid
-		Height="44"
+		Height="32"
 		Padding="4,0,4,0"
-		Background="{ThemeResource App.Theme.AddressBar.BackgroundBrush}"
+		Background="#FFF4F1E4"
 		BorderBrush="#FFACA899"
 		BorderThickness="0,0,0,1"
 		ColumnSpacing="4">
 		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
 			<ColumnDefinition Width="Auto" />
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="Auto" />
@@ -223,10 +224,19 @@
 			</Button>
 		</StackPanel>
 
+		<!--  Classic Explorer address label; navigation remains owned by Omnibar. -->
+		<TextBlock
+			Grid.Column="1"
+			Margin="6,0,4,0"
+			VerticalAlignment="Center"
+			FontFamily="Tahoma, Segoe UI"
+			FontSize="12"
+			Text="Address:" />
+
 		<!--  Omnibar  -->
 		<controls:Omnibar
 			x:Name="Omnibar"
-			Grid.Column="1"
+			Grid.Column="2"
 			x:Load="{x:Bind ViewModel.LoadOmnibar, Mode=OneWay}"
 			CurrentSelectedModeName="{x:Bind ViewModel.OmnibarCurrentSelectedModeName, Mode=TwoWay}"
 			IsFocusedChanged="Omnibar_IsFocusedChanged"
@@ -404,7 +414,7 @@
 		<!--  Right Side Action Buttons  -->
 		<StackPanel
 			x:Name="RightSideActionsStackPanel"
-			Grid.Column="2"
+			Grid.Column="3"
 			Orientation="Horizontal"
 			Spacing="4">
 
