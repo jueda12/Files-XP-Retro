@@ -33,6 +33,35 @@ $TempDir = Join-Path $RepoRoot "artifacts\XP-Retro-Temp"
 $PfxPath = Join-Path $TempDir "Files-XP-Retro-SelfSigned.pfx"
 $CerPath = Join-Path $OutputDir "Files-XP-Retro-SelfSigned.cer"
 
+
+$RequiredWin32Sources = @(
+    "src\Files.App\Helpers\Win32\Win32Helper.Process.cs",
+    "src\Files.App\Helpers\Win32\Win32Helper.Shell.cs",
+    "src\Files.App\Helpers\Win32\Win32Helper.Storage.cs",
+    "src\Files.App\Helpers\Win32\Win32Helper.WindowManagement.cs",
+    "src\Files.App\Helpers\Win32\Win32PInvoke.Consts.cs",
+    "src\Files.App\Helpers\Win32\Win32PInvoke.Enums.cs",
+    "src\Files.App\Helpers\Win32\Win32PInvoke.Methods.cs",
+    "src\Files.App\Helpers\Win32\Win32PInvoke.Structs.cs"
+)
+
+$MissingWin32Sources = @(
+    $RequiredWin32Sources |
+        Where-Object { -not (Test-Path (Join-Path $RepoRoot $_)) }
+)
+
+if ($MissingWin32Sources.Count -gt 0) {
+    $MissingList = $MissingWin32Sources -join [Environment]::NewLine
+    throw @"
+Required Files.App Win32 source files are missing:
+$MissingList
+
+The repository's generic Visual Studio .gitignore rule ignores directories named
+Win32. Add the supplied .gitignore exceptions and commit
+src/Files.App/Helpers/Win32 before building.
+"@
+}
+
 function Resolve-CommandPath([string]$Name) {
     $cmd = Get-Command $Name -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
@@ -75,7 +104,7 @@ function Invoke-Checked([string]$FilePath, [string[]]$Arguments) {
     Write-Host "> $FilePath $($Arguments -join ' ')"
     & $FilePath @Arguments
     if ($LASTEXITCODE -ne 0) {
-        throw "Command failed with exit code $LASTEXITCODE: $FilePath"
+        throw "Command failed with exit code ${LASTEXITCODE}: $FilePath"
     }
 }
 

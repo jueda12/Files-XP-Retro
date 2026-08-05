@@ -29,6 +29,11 @@ mono_crash.*
 x64/
 x86/
 [Ww][Ii][Nn]32/
+# Files.App source code: override the generic Visual Studio Win32 build-output rule.
+# Without these exceptions, `git add .` drops the required Win32 helper sources.
+!src/Files.App/Helpers/Win32/
+!src/Files.App/Helpers/Win32/**
+
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
@@ -409,4 +414,3 @@ FodyWeavers.xsd
 *.sln.iml
 .idea/
 src/Files.App/Assets/FilesOpenDialog/Files.App.Launcher.exe.sha256
-.alma-snapshots
