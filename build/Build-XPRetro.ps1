@@ -170,6 +170,8 @@ try {
         "-t:Build",
         "-p:Configuration=$Configuration",
         "-p:Platform=$Architecture",
+        # Keep publish consistent with restore; Release defaults to ReadyToRun in Files.App.
+        "-p:PublishReadyToRun=false",
         "-p:AppxBundle=Never",
         "-p:GenerateAppxPackageOnBuild=true",
         "-p:UapAppxPackageBuildMode=SideloadOnly",
