@@ -9,6 +9,17 @@ if ([System.Environment]::OSVersion.Platform -ne [System.PlatformID]::Win32NT) {
     throw "Files XP Retro can only be installed on Windows."
 }
 
+$identity = [Security.Principal.WindowsIdentity]::GetCurrent()
+$principal = [Security.Principal.WindowsPrincipal]::new($identity)
+if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    $process = Start-Process powershell.exe -Verb RunAs -Wait -PassThru -ArgumentList @(
+        "-NoProfile",
+        "-ExecutionPolicy", "Bypass",
+        "-File", "`"$PSCommandPath`""
+    )
+    exit $process.ExitCode
+}
+
 $PackageRoot = $PSScriptRoot
 $CertificatePath = Join-Path $PackageRoot "Files-XP-Retro-SelfSigned.cer"
 
@@ -37,7 +48,7 @@ $dependencies = @(
 Write-Host "Installing the Files XP Retro test certificate for the current user..."
 Import-Certificate `
     -FilePath $CertificatePath `
-    -CertStoreLocation "Cert:\CurrentUser\Root" |
+    -CertStoreLocation "Cert:\LocalMachine\TrustedPeople" |
     Out-Null
 
 Write-Host "Installing $($package.Name)..."
