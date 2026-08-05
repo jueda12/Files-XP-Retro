@@ -1,4 +1,4 @@
-// Copyright (c) Files Community
+﻿// Copyright (c) Files Community
 // Licensed under the MIT License.
 
 using Microsoft.UI.Input;
@@ -15,7 +15,7 @@ using DispatcherQueueTimer = Microsoft.UI.Dispatching.DispatcherQueueTimer;
 
 namespace Files.App.Views.Shells
 {
-	public abstract class BaseShellPage : Page, IShellPage, INotifyPropertyChanged
+	public abstract class BaseShellPage : Page, IShellPage, IExplorerTabChrome, INotifyPropertyChanged
 	{
 		private readonly DispatcherQueueTimer _updateDateDisplayTimer;
 
