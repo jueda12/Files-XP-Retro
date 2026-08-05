@@ -208,7 +208,7 @@
 		<!--  Content Area  -->
 		<controls:SidebarView
 			x:Name="SidebarControl"
-			Grid.Row="2"
+			Grid.Row="3"
 			HorizontalAlignment="Stretch"
 			HorizontalContentAlignment="Stretch"
 			DisplayMode="{x:Bind SidebarAdaptiveViewModel.SidebarDisplayMode, Mode=TwoWay}"
