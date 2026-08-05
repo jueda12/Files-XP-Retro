@@ -1,4 +1,4 @@
-# Unofficial Files XP Retro build workflow
+﻿# Unofficial Files XP Retro build workflow
 # Builds a self-signed x64 MSIX package on a Windows GitHub-hosted runner.
 
 name: Build Files XP Retro
@@ -39,7 +39,7 @@ jobs:
       - name: Upload installer artifact
         uses: actions/upload-artifact@v7
         with:
-          name: Files-XP-Retro-4.2.2-x64
+          name: Files-XP-Retro-4.2.2.2-x64
           path: artifacts/XP-Retro-Package
           if-no-files-found: error
           retention-days: 30
