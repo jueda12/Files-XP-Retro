@@ -1,4 +1,4 @@
-<!--  Unofficial Windows XP-inspired palette for the Files XP Retro fork.  -->
+﻿<!--  Unofficial Windows XP-inspired palette for the Files XP Retro fork.  -->
 <ResourceDictionary
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -44,6 +44,41 @@
 			<SolidColorBrush x:Key="TextFillColorSecondaryBrush" Color="#FF404040" />
 			<SolidColorBrush x:Key="AccentTextFillColorPrimaryBrush" Color="#FF003399" />
 			<SolidColorBrush x:Key="DividerStrokeColorDefaultBrush" Color="#FFACA899" />
+			<!-- Luna Explorer primitives: use shallow gradients and crisp bevel edges, never acrylic or soft elevation. -->
+			<FontFamily x:Key="Xp.FontFamily">Tahoma, Segoe UI, Arial</FontFamily>
+			<CornerRadius x:Key="Xp.ControlCornerRadius">2</CornerRadius>
+			<Color x:Key="Xp.Selection.Active">#FF316AC5</Color>
+			<Color x:Key="Xp.Selection.Inactive">#FFC1D2EE</Color>
+			<SolidColorBrush x:Key="Xp.Selection.ActiveBrush" Color="{StaticResource Xp.Selection.Active}" />
+			<SolidColorBrush x:Key="Xp.Selection.InactiveBrush" Color="{StaticResource Xp.Selection.Inactive}" />
+			<SolidColorBrush x:Key="Xp.BorderBrush" Color="#FF7F9DB9" />
+			<SolidColorBrush x:Key="Xp.HighlightBrush" Color="#FFFFFFFF" />
+			<SolidColorBrush x:Key="Xp.ShadowBrush" Color="#FFACA899" />
+			<LinearGradientBrush x:Key="Xp.TitleBarBrush" StartPoint="0,0" EndPoint="0,1">
+				<GradientStop Offset="0" Color="#FF3A6EA5" />
+				<GradientStop Offset="0.48" Color="#FF245EDC" />
+				<GradientStop Offset="1" Color="#FF0A246A" />
+			</LinearGradientBrush>
+			<LinearGradientBrush x:Key="Xp.ToolbarBrush" StartPoint="0,0" EndPoint="0,1">
+				<GradientStop Offset="0" Color="#FFFFFEF7" />
+				<GradientStop Offset="1" Color="#FFECE9D8" />
+			</LinearGradientBrush>
+			<LinearGradientBrush x:Key="Xp.TaskPaneBrush" StartPoint="0,0" EndPoint="0,1">
+				<GradientStop Offset="0" Color="#FFD6E7FF" />
+				<GradientStop Offset="1" Color="#FFEEF6FF" />
+			</LinearGradientBrush>
+			<Style TargetType="TextBlock">
+				<Setter Property="FontFamily" Value="{StaticResource Xp.FontFamily}" />
+			</Style>
+			<Style TargetType="TextBox">
+				<Setter Property="CornerRadius" Value="{StaticResource Xp.ControlCornerRadius}" />
+			</Style>
+			<Style TargetType="Button">
+				<Setter Property="CornerRadius" Value="{StaticResource Xp.ControlCornerRadius}" />
+			</Style>
+			<Style TargetType="InfoBar">
+				<Setter Property="CornerRadius" Value="{StaticResource Xp.ControlCornerRadius}" />
+			</Style>
 		</ResourceDictionary>
 	</ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>

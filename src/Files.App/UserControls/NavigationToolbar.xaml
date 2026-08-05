@@ -62,9 +62,9 @@
 	</UserControl.Resources>
 
 	<Grid
-		Height="44"
-		Padding="4,0,4,0"
-		Background="{ThemeResource App.Theme.AddressBar.BackgroundBrush}"
+		Height="32"
+		Padding="3,0,3,0"
+		Background="{StaticResource Xp.ToolbarBrush}"
 		BorderBrush="#FFACA899"
 		BorderThickness="0,0,0,1"
 		ColumnSpacing="4">

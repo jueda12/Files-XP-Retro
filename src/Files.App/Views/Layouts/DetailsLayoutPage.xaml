@@ -1,4 +1,4 @@
-<!--  Copyright (c) Files Community. Licensed under the MIT License.  -->
+﻿<!--  Copyright (c) Files Community. Licensed under the MIT License.  -->
 <local:BaseGroupableLayoutPage
 	x:Class="Files.App.Views.Layouts.DetailsLayoutPage"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -268,7 +268,7 @@
 					<ListView.Header>
 						<Grid
 							x:Name="HeaderGrid"
-							Height="40"
+							Height="24"
 							Margin="-8,0,-8,0"
 							Padding="24,0,0,0"
 							BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}"

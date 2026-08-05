@@ -236,7 +236,7 @@
 						Grid.ColumnSpan="3"
 						Margin="0,0,0,4"
 						x:Load="{x:Bind SidebarAdaptiveViewModel.PaneHolder.ActivePaneOrColumn.ShellViewModel.IsNetworkDiscoveryInfoBarOpen, Mode=OneWay}"
-						CornerRadius="8"
+						CornerRadius="2"
 						IsClosable="True"
 						IsIconVisible="True"
 						IsOpen="{x:Bind SidebarAdaptiveViewModel.PaneHolder.ActivePaneOrColumn.ShellViewModel.IsNetworkDiscoveryInfoBarOpen, Mode=TwoWay}"

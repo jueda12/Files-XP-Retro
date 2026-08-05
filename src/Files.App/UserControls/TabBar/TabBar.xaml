@@ -69,8 +69,8 @@
 		x:Name="TitlebarArea"
 		HorizontalAlignment="Stretch"
 		x:FieldModifier="public"
-		Background="{ThemeResource App.Theme.BackgroundBrush}"
-		BorderBrush="#FF003399"
+		Background="{StaticResource Xp.TitleBarBrush}"
+		BorderBrush="{StaticResource Xp.ShadowBrush}"
 		BorderThickness="0,0,0,1">
 
 		<!--  TabBar + Draggable Right Padding  -->
