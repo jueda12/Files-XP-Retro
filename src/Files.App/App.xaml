@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Files Community. Licensed under the MIT License.  -->
+<!--  Copyright (c) Files Community. Licensed under the MIT License.  -->
 <Application
 	x:Class="Files.App.App"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -70,10 +70,10 @@
 					<ResourceDictionary.ThemeDictionaries>
 						<ResourceDictionary x:Key="Light">
 							<!--  Windows XP Luna-inspired palette  -->
-							<SolidColorBrush x:Key="App.Theme.BackgroundBrush" Color="#FFF7F4EA" />
+							<SolidColorBrush x:Key="App.Theme.BackgroundBrush" Color="#FF0054E3" />
 							<SolidColorBrush x:Key="App.Theme.AddressBar.BackgroundBrush" Color="#FFFFFFFF" />
 							<SolidColorBrush x:Key="App.Theme.Toolbar.BackgroundBrush" Color="#FFECE9D8" />
-							<SolidColorBrush x:Key="App.Theme.Sidebar.BackgroundBrush" Color="#FFF1F6FA" />
+							<SolidColorBrush x:Key="App.Theme.Sidebar.BackgroundBrush" Color="#FFD6E6FF" />
 							<SolidColorBrush x:Key="App.Theme.FileArea.BackgroundBrush" Color="#FFFFFFFF" />
 							<SolidColorBrush x:Key="App.Theme.FileArea.SecondaryBackgroundBrush" Color="#FFF3F3EE" />
 							<SolidColorBrush x:Key="App.Theme.InfoPane.BackgroundBrush" Color="#FFD6E6FF" />
@@ -98,7 +98,7 @@
 							<SolidColorBrush x:Key="TabViewItemHeaderPointerOverCloseButtonForeground" Color="#FF000000" />
 							<SolidColorBrush x:Key="TabViewItemHeaderPressedCloseButtonForeground" Color="#FF000000" />
 
-							<Color x:Key="App.Theme.FillColorAttention">#4F789A</Color>
+							<Color x:Key="App.Theme.FillColorAttention">#245EDC</Color>
 							<SolidColorBrush x:Key="App.Theme.FillColorAttentionBrush" Color="{StaticResource App.Theme.FillColorAttention}" />
 							<SolidColorBrush x:Key="App.Theme.CardBackgroundFillColorTertiaryBrush" Color="#FFFFFFFF" />
 						</ResourceDictionary>

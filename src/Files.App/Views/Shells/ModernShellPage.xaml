@@ -38,7 +38,10 @@
 		BackgroundSizing="InnerBorderEdge"
 		BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
 		BorderThickness="1"
-		CornerRadius="0">
+		CornerRadius="8">
+		<Grid.Shadow>
+			<ThemeShadow x:Name="ShellContentThemeShadow" x:FieldModifier="public" />
+		</Grid.Shadow>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />

@@ -140,14 +140,13 @@
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
-			<RowDefinition Height="26" />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
 		<!--  Background Image  -->
 		<Image
-			Grid.RowSpan="4"
+			Grid.RowSpan="3"
 			HorizontalAlignment="{x:Bind ViewModel.AppThemeBackgroundImageHorizontalAlignment, Mode=OneWay}"
 			VerticalAlignment="{x:Bind ViewModel.AppThemeBackgroundImageVerticalAlignment, Mode=OneWay}"
 			Opacity="{x:Bind ViewModel.AppThemeBackgroundImageOpacity, Mode=OneWay}"
@@ -162,42 +161,10 @@
 			Loaded="HorizontalMultitaskingControl_Loaded"
 			TabIndex="0" />
 
-		<!--  Classic Explorer menu strip: commands map to existing Files actions. -->
-		<Border
-			Grid.Row="1"
-			Background="{StaticResource Xp.ToolbarBrush}"
-			BorderBrush="{StaticResource Xp.ShadowBrush}"
-			BorderThickness="0,0,0,1">
-			<MenuBar Padding="4,0" FontFamily="{StaticResource Xp.FontFamily}" FontSize="12">
-				<MenuBarItem Title="File">
-					<MenuFlyoutItem Command="{x:Bind Commands.RefreshItems}" Text="Refresh" />
-				</MenuBarItem>
-				<MenuBarItem Title="Edit">
-					<MenuFlyoutItem Command="{x:Bind Commands.SelectAll}" Text="Select All" />
-					<MenuFlyoutItem Command="{x:Bind Commands.ClearSelection}" Text="Clear Selection" />
-				</MenuBarItem>
-				<MenuBarItem Title="View">
-					<MenuFlyoutItem Command="{x:Bind Commands.LayoutDetails}" Text="Details" />
-					<MenuFlyoutItem Command="{x:Bind Commands.LayoutList}" Text="List" />
-					<MenuFlyoutItem Command="{x:Bind Commands.LayoutGrid}" Text="Icons" />
-				</MenuBarItem>
-				<MenuBarItem Title="Favorites">
-					<MenuFlyoutItem Command="{x:Bind Commands.NavigateUp}" Text="Up One Level" />
-				</MenuBarItem>
-				<MenuBarItem Title="Tools">
-					<MenuFlyoutItem Command="{x:Bind Commands.Search}" Text="Search" />
-					<MenuFlyoutItem Command="{x:Bind Commands.ToggleInfoPane}" Text="Folder Options" />
-				</MenuBarItem>
-				<MenuBarItem Title="Help">
-					<MenuFlyoutItem Command="{x:Bind Commands.OpenCommandPalette}" Text="Command Palette" />
-				</MenuBarItem>
-			</MenuBar>
-		</Border>
-
 		<!--  Address Bar  -->
 		<uc:NavigationToolbar
 			x:Name="NavToolbar"
-			Grid.Row="2"
+			Grid.Row="1"
 			HorizontalAlignment="Stretch"
 			HorizontalContentAlignment="Stretch"
 			x:Load="False"
@@ -208,7 +175,7 @@
 		<!--  Content Area  -->
 		<controls:SidebarView
 			x:Name="SidebarControl"
-			Grid.Row="3"
+			Grid.Row="2"
 			HorizontalAlignment="Stretch"
 			HorizontalContentAlignment="Stretch"
 			DisplayMode="{x:Bind SidebarAdaptiveViewModel.SidebarDisplayMode, Mode=TwoWay}"
@@ -269,7 +236,7 @@
 						Grid.ColumnSpan="3"
 						Margin="0,0,0,4"
 						x:Load="{x:Bind SidebarAdaptiveViewModel.PaneHolder.ActivePaneOrColumn.ShellViewModel.IsNetworkDiscoveryInfoBarOpen, Mode=OneWay}"
-						CornerRadius="2"
+						CornerRadius="8"
 						IsClosable="True"
 						IsIconVisible="True"
 						IsOpen="{x:Bind SidebarAdaptiveViewModel.PaneHolder.ActivePaneOrColumn.ShellViewModel.IsNetworkDiscoveryInfoBarOpen, Mode=TwoWay}"
@@ -346,30 +313,8 @@
 
 			<!--  Sidebar Content  -->
 			<controls:SidebarView.SidebarContent>
-				<Border
-					Margin="6,8,6,6"
-					Padding="1"
-					Background="{StaticResource Xp.TaskPaneBrush}"
-					BorderBrush="{StaticResource Xp.BorderBrush}"
-					BorderThickness="1"
-					CornerRadius="2">
-										<StackPanel>
-						<Border
-							Height="25"
-							Padding="8,0"
-							Background="{StaticResource Xp.TaskHeaderBrush}"
-							BorderBrush="{StaticResource Xp.HighlightBrush}"
-							BorderThickness="0,0,0,1">
-							<TextBlock
-								VerticalAlignment="Center"
-								FontFamily="{StaticResource Xp.FontFamily}"
-								FontSize="12"
-								FontWeight="SemiBold"
-								Foreground="White"
-								Text="File and Folder Tasks" />
-						</Border>
-<StackPanel
-						x:Name="SidebarContent"
+				<StackPanel
+					x:Name="SidebarContent"
 					Padding="16,0,16,0"
 					VerticalAlignment="Center"
 					Orientation="Vertical"
@@ -387,9 +332,7 @@
 						Style="{StaticResource App.Theme.CaptionTextBlockStyle}"
 						Text="{helpers:ResourceString Name=SectionsHiddenMessage}"
 						TextAlignment="Center" />
-					</StackPanel>
-					</StackPanel>
-				</Border>
+				</StackPanel>
 			</controls:SidebarView.SidebarContent>
 
 			<!--  Footer  -->
@@ -434,7 +377,7 @@
 		<!--  Review Files Prompt  -->
 		<TeachingTip
 			Title="{helpers:ResourceString Name=Hello}"
-			Grid.RowSpan="4"
+			Grid.RowSpan="3"
 			HorizontalAlignment="Center"
 			VerticalAlignment="Bottom"
 			ActionButtonCommand="{x:Bind ViewModel.ReviewAppCommand}"
@@ -447,7 +390,7 @@
 		<!--  Sponsor Prompt  -->
 		<TeachingTip
 			Title="{helpers:ResourceString Name=Hello}"
-			Grid.RowSpan="4"
+			Grid.RowSpan="3"
 			HorizontalAlignment="Center"
 			VerticalAlignment="Bottom"
 			ActionButtonCommand="{x:Bind ViewModel.SponsorCommand}"

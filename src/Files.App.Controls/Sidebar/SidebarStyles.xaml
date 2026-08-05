@@ -21,7 +21,7 @@
 		<Setter Target="Height" Value="24" />
 		<Setter Target="Padding" Value="0" />
 		<Setter Target="BorderThickness" Value="0" />
-		<Setter Target="CornerRadius" Value="0" />
+		<Setter Target="CornerRadius" Value="4" />
 		<Setter Target="Background" Value="Transparent" />
 	</Style>
 
