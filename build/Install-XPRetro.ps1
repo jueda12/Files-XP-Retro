@@ -1,11 +1,11 @@
-#requires -Version 5.1
+﻿#requires -Version 5.1
 [CmdletBinding()]
 param()
 
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
-if (-not $IsWindows) {
+if ([System.Environment]::OSVersion.Platform -ne [System.PlatformID]::Win32NT) {
     throw "Files XP Retro can only be installed on Windows."
 }
 
@@ -37,7 +37,7 @@ $dependencies = @(
 Write-Host "Installing the Files XP Retro test certificate for the current user..."
 Import-Certificate `
     -FilePath $CertificatePath `
-    -CertStoreLocation "Cert:\CurrentUser\TrustedPeople" |
+    -CertStoreLocation "Cert:\CurrentUser\Root" |
     Out-Null
 
 Write-Host "Installing $($package.Name)..."
