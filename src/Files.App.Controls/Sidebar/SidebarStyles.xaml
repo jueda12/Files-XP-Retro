@@ -71,24 +71,25 @@
 							VerticalAlignment="Top"
 							AutomationProperties.AccessibilityView="Raw"
 							Fill="{ThemeResource AccentFillColorDefaultBrush}"
-							RadiusX="4"
-							RadiusY="4"
+							RadiusX="0"
+							RadiusY="0"
 							Visibility="Collapsed" />
 
 						<!--  Focusable Visual  -->
 						<Border
 							x:Name="ElementBorder"
 							Grid.Row="0"
-							Height="32"
+							Height="28"
 							Background="Transparent">
 							<Grid
 								x:Name="ElementGrid"
-								Margin="0,2,0,2"
+								Margin="0"
 								HorizontalAlignment="Stretch"
-								Background="{ThemeResource SubtleFillColorTransparentBrush}"
+								Background="Transparent"
 								BackgroundSizing="InnerBorderEdge"
+								BorderBrush="Transparent"
 								BorderThickness="1"
-								CornerRadius="{ThemeResource ControlCornerRadius}"
+								CornerRadius="0"
 								IsTabStop="True"
 								TabFocusNavigation="Once"
 								ToolTipService.ToolTip="{TemplateBinding ToolTip}"
@@ -177,8 +178,10 @@
 									HorizontalAlignment="Stretch"
 									VerticalAlignment="Center"
 									AutomationProperties.AccessibilityView="Raw"
-									FontFamily="{ThemeResource ContentControlThemeFontFamily}"
-									LineHeight="16"
+									FontFamily="Tahoma, Segoe UI"
+									FontSize="11"
+									Foreground="#FF003399"
+									LineHeight="14"
 									Opacity="{TemplateBinding ContentOpacity}"
 									Text="{TemplateBinding Text}"
 									TextTrimming="CharacterEllipsis"
@@ -300,9 +303,10 @@
 								<VisualState x:Name="Unselected" />
 								<VisualState x:Name="Selected">
 									<VisualState.Setters>
-										<Setter Target="SelectionIndicator.Opacity" Value="1" />
-										<Setter Target="ElementGrid.BorderBrush" Value="{ThemeResource ButtonBorderBrush}" />
-										<Setter Target="ElementGrid.Background" Value="{ThemeResource ControlFillColorDefaultBrush}" />
+										<Setter Target="SelectionIndicator.Opacity" Value="0" />
+										<Setter Target="ElementGrid.BorderBrush" Value="#FF316AC5" />
+										<Setter Target="ElementGrid.Background" Value="#FF316AC5" />
+										<Setter Target="ItemNameTextBlock.Foreground" Value="White" />
 									</VisualState.Setters>
 								</VisualState>
 							</VisualStateGroup>
@@ -311,32 +315,35 @@
 								<VisualState x:Name="Normal" />
 								<VisualState x:Name="NormalSelected">
 									<VisualState.Setters>
-										<Setter Target="ElementGrid.Background" Value="{ThemeResource ControlFillColorDefaultBrush}" />
-										<Setter Target="ElementGrid.BorderBrush" Value="{ThemeResource ButtonBorderBrush}" />
+										<Setter Target="ElementGrid.Background" Value="#FF316AC5" />
+										<Setter Target="ElementGrid.BorderBrush" Value="#FF316AC5" />
+										<Setter Target="ItemNameTextBlock.Foreground" Value="White" />
 									</VisualState.Setters>
 								</VisualState>
 								<VisualState x:Name="PointerOver">
 									<VisualState.Setters>
-										<Setter Target="ElementGrid.Background" Value="{ThemeResource SubtleFillColorSecondaryBrush}" />
-										<Setter Target="ElementGrid.BorderBrush" Value="{ThemeResource SubtleFillColorSecondaryBrush}" />
+										<Setter Target="ElementGrid.Background" Value="#FFD6E7FF" />
+										<Setter Target="ElementGrid.BorderBrush" Value="#FF7F9DB9" />
 									</VisualState.Setters>
 								</VisualState>
 								<VisualState x:Name="PointerOverSelected">
 									<VisualState.Setters>
-										<Setter Target="ElementGrid.Background" Value="{ThemeResource ControlFillColorSecondaryBrush}" />
-										<Setter Target="ElementGrid.BorderBrush" Value="{ThemeResource ButtonBorderBrush}" />
+										<Setter Target="ElementGrid.Background" Value="#FF0A246A" />
+										<Setter Target="ElementGrid.BorderBrush" Value="#FF0A246A" />
+										<Setter Target="ItemNameTextBlock.Foreground" Value="White" />
 									</VisualState.Setters>
 								</VisualState>
 								<VisualState x:Name="Pressed">
 									<VisualState.Setters>
-										<Setter Target="ElementGrid.Background" Value="{ThemeResource SubtleFillColorTertiaryBrush}" />
-										<Setter Target="ElementGrid.BorderBrush" Value="{ThemeResource SubtleFillColorTertiaryBrush}" />
+										<Setter Target="ElementGrid.Background" Value="#FFC1D2EE" />
+										<Setter Target="ElementGrid.BorderBrush" Value="#FF316AC5" />
 									</VisualState.Setters>
 								</VisualState>
 								<VisualState x:Name="PressedSelected">
 									<VisualState.Setters>
-										<Setter Target="ElementGrid.Background" Value="{ThemeResource ControlFillColorTertiaryBrush}" />
-										<Setter Target="ElementGrid.BorderBrush" Value="{ThemeResource ButtonBorderBrush}" />
+										<Setter Target="ElementGrid.Background" Value="#FF0A246A" />
+										<Setter Target="ElementGrid.BorderBrush" Value="#FF0A246A" />
+										<Setter Target="ItemNameTextBlock.Foreground" Value="White" />
 									</VisualState.Setters>
 								</VisualState>
 
