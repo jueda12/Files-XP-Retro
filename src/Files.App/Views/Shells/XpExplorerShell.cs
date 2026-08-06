@@ -14,7 +14,7 @@ namespace Files.App.Views.Shells
 	{
 		public XpExplorerShell()
 		{
-			RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Title and tabs
+			RowDefinitions.Add(new RowDefinition { Height = new GridLength(44) }); // Title and tabs: fixed chrome contract, never invades menu
 			RowDefinitions.Add(new RowDefinition { Height = new GridLength(26) }); // Classic menu
 			RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Navigation and address
 			RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Notifications

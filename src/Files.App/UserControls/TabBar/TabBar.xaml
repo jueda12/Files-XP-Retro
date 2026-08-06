@@ -69,14 +69,15 @@
 		x:Name="TitlebarArea"
 		HorizontalAlignment="Stretch"
 		x:FieldModifier="public"
-		Background="{ThemeResource App.Theme.BackgroundBrush}"
-		BorderBrush="#FF003399"
+		Background="#FF6B8EAD"
+		BorderBrush="#FF3F6381"
 		BorderThickness="0,0,0,1">
 
 		<!--  TabBar + Draggable Right Padding  -->
 		<TabView
 			x:Name="HorizontalTabView"
-			Margin="0,10,0,0"
+			Margin="0"
+			Height="44"
 			Padding="0"
 			VerticalAlignment="Stretch"
 			AllowDropTabs="True"
