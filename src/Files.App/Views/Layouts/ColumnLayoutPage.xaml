@@ -373,43 +373,68 @@
 						<GroupStyle>
 							<GroupStyle.HeaderTemplate>
 								<DataTemplate x:DataType="storage:IGroupedCollectionHeader">
-									<StackPanel
-										Margin="0,0,0,4"
-										VerticalAlignment="Bottom"
+									<Grid
+										Margin="0,0,8,4"
 										AutomationProperties.Name="{x:Bind Model.Text}"
-										Spacing="0">
-
-										<StackPanel Orientation="Horizontal" Spacing="4">
-
-											<TextBlock
-												VerticalAlignment="Center"
-												FontSize="16"
-												Style="{StaticResource SubtitleTextBlockStyle}"
-												Text="{x:Bind Model.Text, Mode=OneWay}" />
-
-											<TextBlock
-												Margin="4,0,0,0"
-												VerticalAlignment="Center"
-												Style="{StaticResource App.Theme.BodyTextBlockStyle}"
-												Text="{x:Bind Model.CountText, Mode=OneWay}"
-												Visibility="{x:Bind Model.ShowCountTextBelow, Mode=OneWay, Converter={StaticResource NegatedBoolToVisibilityConverter}}" />
-
-											<TextBlock
-												VerticalAlignment="Center"
-												FontSize="14"
-												Style="{StaticResource SubheaderTextBlockStyle}"
-												Text="{x:Bind Model.Subtext, Mode=OneWay}"
-												Visibility="{x:Bind Model.ShowCountTextBelow, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}" />
-
-										</StackPanel>
+										ColumnSpacing="6"
+										RowSpacing="2">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="Auto" />
+											<ColumnDefinition Width="Auto" />
+											<ColumnDefinition Width="*" />
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="1" />
+										</Grid.RowDefinitions>
 
 										<TextBlock
-											Margin="0,2,0,0"
-											Style="{StaticResource App.Theme.BodyTextBlockStyle}"
+											Grid.Row="0"
+											Grid.Column="0"
+											VerticalAlignment="Center"
+											FontFamily="Tahoma, Segoe UI"
+											FontSize="12"
+											FontWeight="Bold"
+											Foreground="#FF003399"
+											Text="{x:Bind Model.Text, Mode=OneWay}" />
+
+										<TextBlock
+											Grid.Row="0"
+											Grid.Column="1"
+											VerticalAlignment="Center"
+											FontFamily="Tahoma, Segoe UI"
+											FontSize="11"
+											Foreground="#FF4F6480"
+											Text="{x:Bind Model.CountText, Mode=OneWay}"
+											Visibility="{x:Bind Model.ShowCountTextBelow, Mode=OneWay, Converter={StaticResource NegatedBoolToVisibilityConverter}}" />
+
+										<TextBlock
+											Grid.Row="0"
+											Grid.Column="2"
+											VerticalAlignment="Center"
+											FontFamily="Tahoma, Segoe UI"
+											FontSize="11"
+											Foreground="#FF4F6480"
+											Text="{x:Bind Model.Subtext, Mode=OneWay}"
+											Visibility="{x:Bind Model.ShowCountTextBelow, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+										<TextBlock
+											Grid.Row="1"
+											Grid.ColumnSpan="3"
+											FontFamily="Tahoma, Segoe UI"
+											FontSize="11"
+											Foreground="#FF4F6480"
 											Text="{x:Bind Model.CountText, Mode=OneWay}"
 											Visibility="{x:Bind Model.ShowCountTextBelow, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}" />
 
-									</StackPanel>
+										<Border
+											Grid.Row="2"
+											Grid.ColumnSpan="3"
+											Height="1"
+											Margin="0,2,0,0"
+											Background="#FF7F9DB9" />
+									</Grid>
 								</DataTemplate>
 							</GroupStyle.HeaderTemplate>
 						</GroupStyle>
