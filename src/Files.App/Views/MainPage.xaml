@@ -237,7 +237,7 @@
 							MinHeight="100" />
 						<RowDefinition Height="Auto" />
 						<RowDefinition x:Name="InfoPaneRowDefinition" Height="Auto" />
-						<RowDefinition Height="Auto" MinHeight="8" />
+						<RowDefinition Height="0" />
 					</Grid.RowDefinitions>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition
@@ -318,15 +318,6 @@
 						x:Load="{x:Bind ViewModel.ShouldPreviewPaneBeActive, Mode=OneWay}"
 						Loaded="PreviewPane_Loaded"
 						Unloaded="PreviewPane_Unloaded" />
-
-					<!--  Status Bar  -->
-					<uc:StatusBar
-						x:Name="StatusBar"
-						Grid.Row="5"
-						Grid.ColumnSpan="3"
-						x:Load="False"
-						ShowInfoText="{x:Bind ViewModel.ShowStatusBar, Mode=OneWay}"
-						Visibility="{x:Bind ViewModel.ShowStatusBar, Mode=OneWay}" />
 
 					<!--  Shelf Pane  -->
 					<uc:ShelfPane
@@ -431,6 +422,15 @@
 				</StackPanel>
 			</controls:SidebarView.Footer>
 		</controls:SidebarView>
+
+		<!--  Status bar. The shell owns this dedicated row; the existing Files control keeps all status bindings and behavior.  -->
+		<uc:StatusBar
+			x:Name="StatusBar"
+			Grid.Row="5"
+			HorizontalAlignment="Stretch"
+			x:Load="False"
+			ShowInfoText="{x:Bind ViewModel.ShowStatusBar, Mode=OneWay}"
+			Visibility="{x:Bind ViewModel.ShowStatusBar, Mode=OneWay}" />
 
 		<!--  Review Files Prompt  -->
 		<TeachingTip

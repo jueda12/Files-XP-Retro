@@ -26,8 +26,9 @@
 	</UserControl.Resources>
 
 	<Grid
-		Padding="8,0,0,0"
-		Background="{ThemeResource App.Theme.Toolbar.BackgroundBrush}"
+		Height="24"
+		Padding="4,0,2,0"
+		Background="#FFECE9D8"
 		BorderBrush="#FFACA899"
 		BorderThickness="0,1,0,0">
 		<Grid.ColumnDefinitions>
@@ -39,18 +40,20 @@
 		<!--  Folder and selection info  -->
 		<StackPanel
 			Grid.Column="0"
-			Height="32"
+			Height="23"
 			HorizontalAlignment="Stretch"
 			VerticalAlignment="Stretch"
 			Orientation="Horizontal"
-			Spacing="8"
+			Spacing="6"
 			Visibility="{x:Bind ShowInfoText, Mode=OneWay}">
 
 			<TextBlock
 				x:Name="DirectoryItemCount"
 				VerticalAlignment="Center"
+				FontFamily="Tahoma, Segoe UI"
+				FontSize="11"
 				x:Load="{x:Bind ShowInfoText, Mode=OneWay}"
-				Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+				Foreground="#FF000000"
 				Text="{x:Bind StatusBarViewModel.DirectoryItemCount, Mode=OneWay}" />
 
 			<!--  Divider  -->
@@ -59,13 +62,15 @@
 				Width="1"
 				Height="18"
 				x:Load="{x:Bind SelectedItemsPropertiesViewModel.IsItemSelected, Mode=OneWay}"
-				Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
+				Background="#FFACA899" />
 			<!--  Selected Items Count  -->
 			<TextBlock
 				x:Name="SelectedItemsCountString"
 				VerticalAlignment="Center"
+				FontFamily="Tahoma, Segoe UI"
+				FontSize="11"
 				x:Load="{x:Bind SelectedItemsPropertiesViewModel.IsItemSelected, Mode=OneWay}"
-				Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+				Foreground="#FF000000"
 				Text="{x:Bind SelectedItemsPropertiesViewModel.SelectedItemsCountString, Mode=OneWay}" />
 
 			<!--  Divider  -->
@@ -74,13 +79,15 @@
 				Width="1"
 				Height="18"
 				x:Load="{x:Bind SelectedItemsPropertiesViewModel.ItemSizeVisibility, Mode=OneWay}"
-				Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
+				Background="#FFACA899" />
 			<!--  Item Size  -->
 			<TextBlock
 				x:Name="ItemSize"
 				VerticalAlignment="Center"
+				FontFamily="Tahoma, Segoe UI"
+				FontSize="11"
 				x:Load="{x:Bind SelectedItemsPropertiesViewModel.ItemSizeVisibility, Mode=OneWay}"
-				Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+				Foreground="#FF000000"
 				Text="{x:Bind SelectedItemsPropertiesViewModel.ItemSize, Mode=OneWay}" />
 		</StackPanel>
 
@@ -100,8 +107,11 @@
 				VerticalAlignment="Center"
 				x:Load="{x:Bind StatusBarViewModel.ShowOpenInIDEButton, Mode=OneWay}"
 				AutomationProperties.Name="{helpers:ResourceString Name=Open}"
-				Background="Transparent"
-				BorderBrush="Transparent">
+				Background="#FFECE9D8"
+				BorderBrush="#FFACA899"
+			CornerRadius="0"
+			FontFamily="Tahoma, Segoe UI"
+			FontSize="11">
 				<Button.Content>
 					<StackPanel Orientation="Horizontal" Spacing="8">
 						<controls:ThemedIcon
@@ -136,7 +146,7 @@
 				Width="1"
 				Height="18"
 				x:Load="{x:Bind StatusBarViewModel.GitBranchDisplayName, Mode=OneWay, Converter={StaticResource NullToFalseConverter}, FallbackValue=False}"
-				Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
+				Background="#FFACA899" />
 
 			<Button
 				x:Name="GitNetworkActions"
@@ -144,9 +154,12 @@
 				Padding="8,0,8,0"
 				VerticalAlignment="Center"
 				x:Load="{x:Bind StatusBarViewModel.GitBranchDisplayName, Mode=OneWay, Converter={StaticResource NullToFalseConverter}, FallbackValue=False}"
-				Background="Transparent"
-				BorderBrush="Transparent"
-				ToolTipService.ToolTip="{x:Bind StatusBarViewModel.ExtendedStatusInfo, Mode=OneWay}">
+				Background="#FFECE9D8"
+				BorderBrush="#FFACA899"
+				ToolTipService.ToolTip="{x:Bind StatusBarViewModel.ExtendedStatusInfo, Mode=OneWay}"
+			CornerRadius="0"
+			FontFamily="Tahoma, Segoe UI"
+			FontSize="11">
 				<Button.Flyout>
 					<MenuFlyout>
 						<!--  Pull Button  -->
@@ -194,7 +207,7 @@
 				Width="1"
 				Height="18"
 				x:Load="{x:Bind StatusBarViewModel.GitBranchDisplayName, Mode=OneWay, Converter={StaticResource NullToFalseConverter}, FallbackValue=False}"
-				Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
+				Background="#FFACA899" />
 		</StackPanel>
 
 		<!--  Use visibility because it causes a crash to use a TwoWay x:Bind on an element that is inside an element with x:Load (#12589, #12599)  -->
@@ -204,10 +217,13 @@
 			Height="24"
 			Margin="4,0,0,0"
 			Padding="8,0,8,0"
-			Background="Transparent"
-			BorderBrush="Transparent"
+			Background="#FFECE9D8"
+			BorderBrush="#FFACA899"
 			ToolTipService.ToolTip="{helpers:ResourceString Name=ManageBranches}"
-			Visibility="{x:Bind StatusBarViewModel.GitBranchDisplayName, Mode=OneWay, Converter={StaticResource NullToVisibilityCollapsedConverter}, FallbackValue=Collapsed}">
+			Visibility="{x:Bind StatusBarViewModel.GitBranchDisplayName, Mode=OneWay, Converter={StaticResource NullToVisibilityCollapsedConverter}, FallbackValue=Collapsed}"
+			CornerRadius="0"
+			FontFamily="Tahoma, Segoe UI"
+			FontSize="11">
 
 			<Button.Content>
 				<StackPanel Orientation="Horizontal" Spacing="8">
