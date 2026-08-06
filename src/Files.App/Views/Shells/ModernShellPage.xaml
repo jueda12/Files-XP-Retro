@@ -34,14 +34,11 @@
 		x:Name="RootGrid"
 		wct:UIElementExtensions.ClipToBounds="True"
 		x:FieldModifier="public"
-		Background="{ThemeResource App.Theme.FileArea.BackgroundBrush}"
+		Background="White"
 		BackgroundSizing="InnerBorderEdge"
-		BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+		BorderBrush="#FF7F9DB9"
 		BorderThickness="1"
-		CornerRadius="8">
-		<Grid.Shadow>
-			<ThemeShadow x:Name="ShellContentThemeShadow" x:FieldModifier="public" />
-		</Grid.Shadow>
+		CornerRadius="0">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
@@ -184,12 +181,12 @@
 			<VisualStateGroup x:Name="ShellBackgroundFocusState">
 				<VisualState x:Name="ShellBackgroundFocusOnState">
 					<VisualState.Setters>
-						<Setter Target="RootGrid.Background" Value="{ThemeResource App.Theme.FileArea.BackgroundBrush}" />
+						<Setter Target="RootGrid.Background" Value="White" />
 					</VisualState.Setters>
 				</VisualState>
 				<VisualState x:Name="ShellBackgroundFocusOffState">
 					<VisualState.Setters>
-						<Setter Target="RootGrid.Background" Value="{ThemeResource App.Theme.FileArea.SecondaryBackgroundBrush}" />
+						<Setter Target="RootGrid.Background" Value="White" />
 					</VisualState.Setters>
 				</VisualState>
 			</VisualStateGroup>
