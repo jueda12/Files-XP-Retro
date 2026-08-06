@@ -21,7 +21,7 @@
 		<Setter Target="Height" Value="24" />
 		<Setter Target="Padding" Value="0" />
 		<Setter Target="BorderThickness" Value="0" />
-		<Setter Target="CornerRadius" Value="4" />
+		<Setter Target="CornerRadius" Value="0" />
 		<Setter Target="Background" Value="Transparent" />
 	</Style>
 
@@ -119,8 +119,8 @@
 									AutomationProperties.AccessibilityView="Raw"
 									Fill="{ThemeResource AccentFillColorDefaultBrush}"
 									Opacity="0"
-									RadiusX="2"
-									RadiusY="2" />
+									RadiusX="0"
+									RadiusY="0" />
 
 								<!--  Depth indent spacer (width = NestingLevel * 16)  -->
 								<Border
