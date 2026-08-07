@@ -160,19 +160,19 @@
 		<!--  Classic Explorer menu: a fixed, clipped viewport. WinUI child templates cannot paint into the address row. -->
 		<ScrollViewer
 			Grid.Row="1"
-			Height="26"
+			Height="36"
 			HorizontalScrollBarVisibility="Disabled"
 			HorizontalScrollMode="Disabled"
 			VerticalScrollBarVisibility="Disabled"
 			VerticalScrollMode="Disabled"
 			ZoomMode="Disabled">
 			<Border
-				Height="26"
+				Height="32"
 				Background="#FFF4F1E4"
 				BorderBrush="#FFACA899"
 				BorderThickness="0,0,0,1">
 				<MenuBar
-					Height="26"
+					Height="32"
 					VerticalAlignment="Top"
 					Padding="4,0"
 					FontFamily="Tahoma, Segoe UI"
@@ -215,6 +215,7 @@
 			<uc:NavigationToolbar
 				x:Name="NavToolbar"
 				Height="32"
+				Margin="0,2,0,2"
 				VerticalAlignment="Top"
 				HorizontalAlignment="Stretch"
 				HorizontalContentAlignment="Stretch"
