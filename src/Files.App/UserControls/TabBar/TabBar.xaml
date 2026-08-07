@@ -14,6 +14,20 @@
 	mc:Ignorable="d">
 
 	<local:BaseTabBar.Resources>
+
+		<!-- XP owns its tab states locally: do not inherit the Fluent highlight blue. -->
+		<SolidColorBrush x:Key="TabViewItemHeaderBackground" Color="#FFD6E0EA" />
+		<SolidColorBrush x:Key="TabViewItemHeaderBackgroundSelected" Color="#FFF1F4F7" />
+		<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPointerOver" Color="#FFE4EBF1" />
+		<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPressed" Color="#FFD8E2EA" />
+		<SolidColorBrush x:Key="TabViewItemHeaderForeground" Color="#FF173A5E" />
+		<SolidColorBrush x:Key="TabViewItemHeaderForegroundSelected" Color="#FF173A5E" />
+		<SolidColorBrush x:Key="TabViewItemHeaderForegroundPointerOver" Color="#FF173A5E" />
+		<SolidColorBrush x:Key="TabViewSelectedItemBorderBrush" Color="#FF5E7C96" />
+		<Thickness x:Key="TabViewSelectedItemBorderThickness">1</Thickness>
+		<Thickness x:Key="TabViewSelectedItemHeaderMargin">0</Thickness>
+		<Thickness x:Key="TabViewSelectedItemHeaderPadding">10,0,8,0</Thickness>
+		<x:Double x:Key="TabViewItemMinHeight">32</x:Double>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="ms-appx:///Styles/TabBarStyles.xaml" />
@@ -69,17 +83,20 @@
 		x:Name="TitlebarArea"
 		HorizontalAlignment="Stretch"
 		x:FieldModifier="public"
-		Background="#FF6B8EAD"
-		BorderBrush="#FF3F6381"
+		Height="44"
+		Background="#FF8EA6B8"
+		BorderBrush="#FF5E7C96"
 		BorderThickness="0,0,0,1">
 
 		<!--  TabBar + Draggable Right Padding  -->
 		<TabView
 			x:Name="HorizontalTabView"
 			Margin="0"
+			MinHeight="0"
+			MaxHeight="44"
 			Height="44"
 			Padding="0"
-			VerticalAlignment="Stretch"
+			VerticalAlignment="Top"
 			AllowDropTabs="True"
 			CanDragTabs="{x:Bind AllowTabsDrag, Mode=OneWay}"
 			CanReorderTabs="{x:Bind AllowTabsDrag, Mode=OneWay}"
