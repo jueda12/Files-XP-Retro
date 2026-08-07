@@ -58,13 +58,29 @@
 	</Style>
 
 	<Style x:Key="TabBarItemStyle" TargetType="TabViewItem">
-		<Setter Property="Background" Value="{ThemeResource TabViewItemHeaderBackground}" />
+		<!--
+
+			This style is the renderer used by TabBar.xaml's TabView.TabItemTemplate.
+
+			Keep the XP chrome values on the elements that paint the tab, rather than
+
+			behind ThemeResource keys that the application resource service can replace.
+
+		-->
+
+		<Setter Property="Background" Value="#FFD6E0EA" />
+
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
+
 		<Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
-		<Setter Property="MinHeight" Value="{ThemeResource TabViewItemMinHeight}" />
+
+		<Setter Property="MinHeight" Value="28" />
+
 		<Setter Property="CornerRadius" Value="3,3,0,0" />
+
 		<Setter Property="BorderThickness" Value="1,1,1,0" />
-		<Setter Property="BorderBrush" Value="#FF7F9DB9" />
+
+		<Setter Property="BorderBrush" Value="#FF5E7C96" />
 		<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
 		<Setter Property="Template">
 			<Setter.Value>
@@ -84,11 +100,17 @@
 						</Grid.RenderTransform>
 
 						<Border
+
 							x:Name="BottomBorderLine"
+
 							Grid.ColumnSpan="3"
+
 							Height="1"
+
 							VerticalAlignment="Bottom"
-							BorderBrush="{ThemeResource TabViewBorderBrush}"
+
+							BorderBrush="#FF5E7C96"
+
 							BorderThickness="1" />
 
 						<Path
@@ -115,13 +137,21 @@
 							Visibility="Collapsed" />
 
 						<Path
+
 							x:Name="SelectedBackgroundPath"
+
 							Grid.ColumnSpan="3"
+
 							Margin="-4,0,-4,0"
+
 							VerticalAlignment="Bottom"
+
 							x:Load="False"
+
 							Data="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TabViewTemplateSettings.TabGeometry}"
-							Fill="{ThemeResource TabViewItemHeaderBackgroundSelected}"
+
+							Fill="#FFF1F4F7"
+
 							Visibility="Collapsed" />
 
 						<Border
@@ -134,11 +164,17 @@
 							BorderThickness="1" />
 
 						<Grid
+
 							x:Name="TabContainer"
+
 							Grid.Column="1"
-							Padding="{ThemeResource TabViewItemHeaderPadding}"
+
+							Padding="8,0,6,0"
+
 							Background="{TemplateBinding Background}"
+
 							BorderBrush="{TemplateBinding BorderBrush}"
+
 							BorderThickness="{TemplateBinding BorderThickness}"
 							Control.IsTemplateFocusTarget="True"
 							CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CornerRadius, Converter={StaticResource TopCornerRadiusFilterConverter}}"
@@ -233,11 +269,11 @@
 										<Setter Target="RightRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="LeftRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="SelectedBackgroundPath.Visibility" Value="Visible" />
-										<Setter Target="SelectedBackgroundPath.Fill" Value="{ThemeResource TabViewItemHeaderBackgroundSelected}" />
-										<Setter Target="TabContainer.Margin" Value="{ThemeResource TabViewSelectedItemHeaderMargin}" />
-										<Setter Target="TabContainer.BorderBrush" Value="{ThemeResource TabViewSelectedItemBorderBrush}" />
-										<Setter Target="TabContainer.BorderThickness" Value="{ThemeResource TabViewSelectedItemBorderThickness}" />
-										<Setter Target="TabContainer.Padding" Value="{ThemeResource TabViewSelectedItemHeaderPadding}" />
+										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF1F4F7" />
+										<Setter Target="TabContainer.Margin" Value="0" />
+										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
+										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
+										<Setter Target="TabContainer.Padding" Value="8,0,6,0" />
 										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundSelected}" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundSelected}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />
@@ -253,11 +289,11 @@
 										<Setter Target="RightRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="LeftRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="SelectedBackgroundPath.Visibility" Value="Visible" />
-										<Setter Target="SelectedBackgroundPath.Fill" Value="{ThemeResource TabViewItemHeaderBackgroundSelected}" />
-										<Setter Target="TabContainer.Margin" Value="{ThemeResource TabViewSelectedItemHeaderMargin}" />
-										<Setter Target="TabContainer.BorderBrush" Value="{ThemeResource TabViewSelectedItemBorderBrush}" />
-										<Setter Target="TabContainer.BorderThickness" Value="{ThemeResource TabViewSelectedItemBorderThickness}" />
-										<Setter Target="TabContainer.Padding" Value="{ThemeResource TabViewSelectedItemHeaderPadding}" />
+										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF1F4F7" />
+										<Setter Target="TabContainer.Margin" Value="0" />
+										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
+										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
+										<Setter Target="TabContainer.Padding" Value="8,0,6,0" />
 										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundSelected}" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundSelected}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />
@@ -274,11 +310,11 @@
 										<Setter Target="RightRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="LeftRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="SelectedBackgroundPath.Visibility" Value="Visible" />
-										<Setter Target="SelectedBackgroundPath.Fill" Value="{ThemeResource TabViewItemHeaderBackgroundSelected}" />
-										<Setter Target="TabContainer.Margin" Value="{ThemeResource TabViewSelectedItemHeaderMargin}" />
-										<Setter Target="TabContainer.BorderBrush" Value="{ThemeResource TabViewSelectedItemBorderBrush}" />
-										<Setter Target="TabContainer.BorderThickness" Value="{ThemeResource TabViewSelectedItemBorderThickness}" />
-										<Setter Target="TabContainer.Padding" Value="{ThemeResource TabViewSelectedItemHeaderPadding}" />
+										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF1F4F7" />
+										<Setter Target="TabContainer.Margin" Value="0" />
+										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
+										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
+										<Setter Target="TabContainer.Padding" Value="8,0,6,0" />
 										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundSelected}" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundSelected}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />

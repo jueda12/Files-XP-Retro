@@ -60,29 +60,6 @@
 				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>
 
-			<!--
-				TabBarStyles.xaml resolves these keys with ThemeResource. Keep the XP values
-				in this control's active ThemeDictionary so they are resolved in the same
-				theme scope as the template, rather than the application-level resource that
-				ResourcesService replaces when a custom address-bar color is applied.
-			-->
-			<ResourceDictionary.ThemeDictionaries>
-				<ResourceDictionary x:Key="Light">
-					<SolidColorBrush x:Key="TabViewItemHeaderBackground" Color="#FFD6E0EA" />
-					<SolidColorBrush x:Key="TabViewItemHeaderBackgroundSelected" Color="#FFF1F4F7" />
-					<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPointerOver" Color="#FFE4EBF1" />
-					<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPressed" Color="#FFD8E2EA" />
-					<SolidColorBrush x:Key="TabViewItemHeaderForeground" Color="#FF173A5E" />
-					<SolidColorBrush x:Key="TabViewItemHeaderForegroundSelected" Color="#FF173A5E" />
-					<SolidColorBrush x:Key="TabViewItemHeaderForegroundPointerOver" Color="#FF173A5E" />
-					<SolidColorBrush x:Key="TabViewSelectedItemBorderBrush" Color="#FF5E7C96" />
-					<Thickness x:Key="TabViewSelectedItemBorderThickness">1</Thickness>
-					<Thickness x:Key="TabViewSelectedItemHeaderMargin">0</Thickness>
-					<Thickness x:Key="TabViewSelectedItemHeaderPadding">8,0,6,0</Thickness>
-					<x:Double x:Key="TabViewItemMinHeight">28</x:Double>
-				</ResourceDictionary>
-			</ResourceDictionary.ThemeDictionaries>
-
 			<wctconverters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
 
 		</ResourceDictionary>
