@@ -177,26 +177,26 @@
 					Padding="4,0"
 					FontFamily="Tahoma, Segoe UI"
 					FontSize="12">
-				<MenuBarItem Title="File" VerticalContentAlignment="Center">
+				<MenuBarItem Title="File">
 					<MenuFlyoutItem Command="{x:Bind Commands.RefreshItems}" Text="Refresh" />
 				</MenuBarItem>
-				<MenuBarItem Title="Edit" VerticalContentAlignment="Center">
+				<MenuBarItem Title="Edit">
 					<MenuFlyoutItem Command="{x:Bind Commands.SelectAll}" Text="Select All" />
 					<MenuFlyoutItem Command="{x:Bind Commands.ClearSelection}" Text="Clear Selection" />
 				</MenuBarItem>
-				<MenuBarItem Title="View" VerticalContentAlignment="Center">
+				<MenuBarItem Title="View">
 					<MenuFlyoutItem Command="{x:Bind Commands.LayoutDetails}" Text="Details" />
 					<MenuFlyoutItem Command="{x:Bind Commands.LayoutList}" Text="List" />
 					<MenuFlyoutItem Command="{x:Bind Commands.LayoutGrid}" Text="Icons" />
 				</MenuBarItem>
-				<MenuBarItem Title="Favorites" VerticalContentAlignment="Center">
+				<MenuBarItem Title="Favorites">
 					<MenuFlyoutItem Command="{x:Bind Commands.NavigateUp}" Text="Up One Level" />
 				</MenuBarItem>
-				<MenuBarItem Title="Tools" VerticalContentAlignment="Center">
+				<MenuBarItem Title="Tools">
 					<MenuFlyoutItem Command="{x:Bind Commands.Search}" Text="Search" />
 					<MenuFlyoutItem Command="{x:Bind Commands.ToggleInfoPane}" Text="Folder Options" />
 				</MenuBarItem>
-				<MenuBarItem Title="Help" VerticalContentAlignment="Center">
+				<MenuBarItem Title="Help">
 					<MenuFlyoutItem Command="{x:Bind Commands.OpenCommandPalette}" Text="Command Palette" />
 				</MenuBarItem>
 				</MenuBar>

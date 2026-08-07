@@ -44,6 +44,9 @@
 			<SolidColorBrush x:Key="TextFillColorSecondaryBrush" Color="#FF404040" />
 			<SolidColorBrush x:Key="AccentTextFillColorPrimaryBrush" Color="#FF003399" />
 			<SolidColorBrush x:Key="DividerStrokeColorDefaultBrush" Color="#FFACA899" />
+
+			<!-- WinUI's MenuBarItem template puts Title in ContentButton and reads this resource for its padding. -->
+			<Thickness x:Key="MenuBarItemButtonPadding">10,0,10,8</Thickness>
 		</ResourceDictionary>
 	</ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>
