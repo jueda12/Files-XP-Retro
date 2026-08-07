@@ -68,7 +68,7 @@
 
 		-->
 
-		<Setter Property="Background" Value="#FFD6E0EA" />
+		<Setter Property="Background" Value="#FFB8D8F5" />
 
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 
@@ -150,7 +150,7 @@
 
 							Data="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TabViewTemplateSettings.TabGeometry}"
 
-							Fill="#FFF1F4F7"
+							Fill="#FFF7FBFF"
 
 							Visibility="Collapsed" />
 
@@ -243,7 +243,7 @@
 
 								<VisualState x:Name="PointerOver">
 									<VisualState.Setters>
-										<Setter Target="TabContainer.Background" Value="{ThemeResource TabViewItemHeaderBackgroundPointerOver}" />
+										<Setter Target="TabContainer.Background" Value="#FFCBE4FA" />
 										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundPointerOver}" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundPointerOver}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderPointerOverCloseButtonBackground}" />
@@ -254,7 +254,7 @@
 
 								<VisualState x:Name="Pressed">
 									<VisualState.Setters>
-										<Setter Target="TabContainer.Background" Value="{ThemeResource TabViewItemHeaderBackgroundPressed}" />
+										<Setter Target="TabContainer.Background" Value="#FFA9CDEA" />
 										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundPressed}" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundPressed}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderPressedCloseButtonBackground}" />
@@ -269,7 +269,7 @@
 										<Setter Target="RightRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="LeftRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="SelectedBackgroundPath.Visibility" Value="Visible" />
-										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF1F4F7" />
+										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF7FBFF" />
 										<Setter Target="TabContainer.Margin" Value="0" />
 										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
 										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
@@ -289,7 +289,7 @@
 										<Setter Target="RightRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="LeftRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="SelectedBackgroundPath.Visibility" Value="Visible" />
-										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF1F4F7" />
+										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF7FBFF" />
 										<Setter Target="TabContainer.Margin" Value="0" />
 										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
 										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
@@ -310,7 +310,7 @@
 										<Setter Target="RightRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="LeftRadiusRenderArc.Visibility" Value="Visible" />
 										<Setter Target="SelectedBackgroundPath.Visibility" Value="Visible" />
-										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF1F4F7" />
+										<Setter Target="SelectedBackgroundPath.Fill" Value="#FFF7FBFF" />
 										<Setter Target="TabContainer.Margin" Value="0" />
 										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
 										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
@@ -330,7 +330,7 @@
 
 								<VisualState x:Name="Disabled">
 									<VisualState.Setters>
-										<Setter Target="TabContainer.Background" Value="{ThemeResource TabViewItemHeaderBackgroundDisabled}" />
+										<Setter Target="TabContainer.Background" Value="#FFDCE8F3" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundDisabled}" />
 										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundDisabled}" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewButtonForegroundDisabled}" />

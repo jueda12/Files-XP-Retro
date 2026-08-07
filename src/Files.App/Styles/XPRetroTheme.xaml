@@ -46,7 +46,7 @@
 			<SolidColorBrush x:Key="DividerStrokeColorDefaultBrush" Color="#FFC6C2B8" />
 
 			<!-- WinUI's MenuBarItem template puts Title in ContentButton and reads this resource for its padding. -->
-			<Thickness x:Key="MenuBarItemButtonPadding">8,0,8,0</Thickness>
+			<Thickness x:Key="MenuBarItemButtonPadding">8,5,8,3</Thickness>
 		</ResourceDictionary>
 	</ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>
