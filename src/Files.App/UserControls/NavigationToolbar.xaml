@@ -52,7 +52,7 @@
 						<Setter Property="Background" Value="Transparent" />
 						<Setter Property="BorderBrush" Value="Transparent" />
 						<Setter Property="Width" Value="36" />
-						<Setter Property="Height" Value="32" />
+						<Setter Property="Height" Value="30" />
 						<Setter Property="Foreground" Value="{ThemeResource App.Theme.IconBaseBrush}" />
 					</Style>
 
@@ -62,10 +62,10 @@
 	</UserControl.Resources>
 
 	<Grid
-		Height="32"
+		Height="30"
 		Padding="4,0,4,0"
-		Background="#FFF4F1E4"
-		BorderBrush="#FFACA899"
+		Background="#FFF3F0E6"
+		BorderBrush="#FFC6C2B8"
 		BorderThickness="0,0,0,1"
 		ColumnSpacing="4">
 		<Grid.ColumnDefinitions>
@@ -95,8 +95,8 @@
 
 			<ToggleButton
 				x:Name="SidebarPaneToggleButton"
-				Width="36"
-				Height="32"
+				Width="32"
+				Height="30"
 				Padding="0"
 				x:Load="{x:Bind IsSidebarPaneOpenToggleButtonVisible, Mode=OneWay}"
 				AutomationProperties.Name="ToggleSidebarPane"
@@ -421,8 +421,8 @@
 			<!--  Shelf Pane  -->
 			<ToggleButton
 				x:Name="ShelfPaneToggleButton"
-				Width="36"
-				Height="32"
+				Width="32"
+				Height="30"
 				Padding="0"
 				x:Load="{x:Bind ViewModel.ShowShelfPaneToggleButton, Mode=OneWay}"
 				AccessKeyInvoked="Button_AccessKeyInvoked"

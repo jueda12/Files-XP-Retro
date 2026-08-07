@@ -61,18 +61,18 @@
 			</ResourceDictionary.MergedDictionaries>
 
 			<!-- XP owns its tab states locally: do not inherit the Fluent highlight blue. -->
-			<SolidColorBrush x:Key="TabViewItemHeaderBackground" Color="#FFD6E0EA" />
-			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundSelected" Color="#FFF1F4F7" />
-			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPointerOver" Color="#FFE4EBF1" />
-			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPressed" Color="#FFD8E2EA" />
-			<SolidColorBrush x:Key="TabViewItemHeaderForeground" Color="#FF173A5E" />
-			<SolidColorBrush x:Key="TabViewItemHeaderForegroundSelected" Color="#FF173A5E" />
-			<SolidColorBrush x:Key="TabViewItemHeaderForegroundPointerOver" Color="#FF173A5E" />
-			<SolidColorBrush x:Key="TabViewSelectedItemBorderBrush" Color="#FF5E7C96" />
+			<SolidColorBrush x:Key="TabViewItemHeaderBackground" Color="#FFB8CFE9" />
+			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundSelected" Color="#FF316AC5" />
+			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPointerOver" Color="#FFD6E6F6" />
+			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPressed" Color="#FF9FBEDE" />
+			<SolidColorBrush x:Key="TabViewItemHeaderForeground" Color="#FF12365C" />
+			<SolidColorBrush x:Key="TabViewItemHeaderForegroundSelected" Color="#FFFFFFFF" />
+			<SolidColorBrush x:Key="TabViewItemHeaderForegroundPointerOver" Color="#FF12365C" />
+			<SolidColorBrush x:Key="TabViewSelectedItemBorderBrush" Color="#FF2A5D9F" />
 			<Thickness x:Key="TabViewSelectedItemBorderThickness">1</Thickness>
 			<Thickness x:Key="TabViewSelectedItemHeaderMargin">0</Thickness>
-			<Thickness x:Key="TabViewSelectedItemHeaderPadding">10,0,8,0</Thickness>
-			<x:Double x:Key="TabViewItemMinHeight">32</x:Double>
+			<Thickness x:Key="TabViewSelectedItemHeaderPadding">8,0,6,0</Thickness>
+			<x:Double x:Key="TabViewItemMinHeight">28</x:Double>
 
 			<wctconverters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
 
@@ -84,9 +84,9 @@
 		x:Name="TitlebarArea"
 		HorizontalAlignment="Stretch"
 		x:FieldModifier="public"
-		Height="44"
-		Background="#FF8EA6B8"
-		BorderBrush="#FF5E7C96"
+		Height="38"
+		Background="#FF7FA4D5"
+		BorderBrush="#FF2A5D9F"
 		BorderThickness="0,0,0,1">
 
 		<!--  TabBar + Draggable Right Padding  -->
@@ -94,8 +94,8 @@
 			x:Name="HorizontalTabView"
 			Margin="0"
 			MinHeight="0"
-			MaxHeight="44"
-			Height="44"
+			MaxHeight="38"
+			Height="38"
 			Padding="0"
 			VerticalAlignment="Top"
 			AllowDropTabs="True"
@@ -118,8 +118,8 @@
 			<!--  Header  -->
 			<TabView.TabStripHeader>
 				<Button
-					Width="30"
-					Height="30"
+					Width="28"
+					Height="28"
 					Margin="4,0,-2,0"
 					Padding="0"
 					VerticalAlignment="Center"
@@ -256,9 +256,9 @@
 					<Button
 						x:Name="TabBarAddNewTabButton"
 						Grid.Column="0"
-						Width="30"
-						Height="30"
-						Padding="8"
+						Width="28"
+						Height="28"
+						Padding="6"
 						HorizontalAlignment="Left"
 						VerticalAlignment="Center"
 						AllowDrop="True"

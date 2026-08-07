@@ -14,9 +14,9 @@ namespace Files.App.Views.Shells
 	{
 		public XpExplorerShell()
 		{
-			RowDefinitions.Add(new RowDefinition { Height = new GridLength(44) }); // Title and tabs: fixed chrome contract, never invades menu
-			RowDefinitions.Add(new RowDefinition { Height = new GridLength(32) }); // Classic menu: WinUI MenuBar needs its full 32-DIP layout slot
-			RowDefinitions.Add(new RowDefinition { Height = new GridLength(36) }); // Navigation/address: distinct full-height XP row below menu
+			RowDefinitions.Add(new RowDefinition { Height = new GridLength(38) }); // Title and tabs: fixed chrome contract, never invades menu
+			RowDefinitions.Add(new RowDefinition { Height = new GridLength(28) }); // Classic menu: compact XP row
+			RowDefinitions.Add(new RowDefinition { Height = new GridLength(30) }); // Navigation/address: compact XP row below menu
 			RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Notifications
 			RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }); // Workspace
 			RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Status
