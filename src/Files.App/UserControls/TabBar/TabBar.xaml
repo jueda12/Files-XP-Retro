@@ -16,19 +16,6 @@
 	<local:BaseTabBar.Resources>
 
 		<ResourceDictionary>
-			<!-- XP owns its tab states locally: do not inherit the Fluent highlight blue. -->
-			<SolidColorBrush x:Key="TabViewItemHeaderBackground" Color="#FFD6E0EA" />
-			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundSelected" Color="#FFF1F4F7" />
-			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPointerOver" Color="#FFE4EBF1" />
-			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPressed" Color="#FFD8E2EA" />
-			<SolidColorBrush x:Key="TabViewItemHeaderForeground" Color="#FF173A5E" />
-			<SolidColorBrush x:Key="TabViewItemHeaderForegroundSelected" Color="#FF173A5E" />
-			<SolidColorBrush x:Key="TabViewItemHeaderForegroundPointerOver" Color="#FF173A5E" />
-			<SolidColorBrush x:Key="TabViewSelectedItemBorderBrush" Color="#FF5E7C96" />
-			<Thickness x:Key="TabViewSelectedItemBorderThickness">1</Thickness>
-			<Thickness x:Key="TabViewSelectedItemHeaderMargin">0</Thickness>
-			<Thickness x:Key="TabViewSelectedItemHeaderPadding">10,0,8,0</Thickness>
-			<x:Double x:Key="TabViewItemMinHeight">32</x:Double>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="ms-appx:///Styles/TabBarStyles.xaml" />
 				<ResourceDictionary>
@@ -72,6 +59,20 @@
 					</MenuFlyout>
 				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>
+
+			<!-- XP owns its tab states locally: do not inherit the Fluent highlight blue. -->
+			<SolidColorBrush x:Key="TabViewItemHeaderBackground" Color="#FFD6E0EA" />
+			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundSelected" Color="#FFF1F4F7" />
+			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPointerOver" Color="#FFE4EBF1" />
+			<SolidColorBrush x:Key="TabViewItemHeaderBackgroundPressed" Color="#FFD8E2EA" />
+			<SolidColorBrush x:Key="TabViewItemHeaderForeground" Color="#FF173A5E" />
+			<SolidColorBrush x:Key="TabViewItemHeaderForegroundSelected" Color="#FF173A5E" />
+			<SolidColorBrush x:Key="TabViewItemHeaderForegroundPointerOver" Color="#FF173A5E" />
+			<SolidColorBrush x:Key="TabViewSelectedItemBorderBrush" Color="#FF5E7C96" />
+			<Thickness x:Key="TabViewSelectedItemBorderThickness">1</Thickness>
+			<Thickness x:Key="TabViewSelectedItemHeaderMargin">0</Thickness>
+			<Thickness x:Key="TabViewSelectedItemHeaderPadding">10,0,8,0</Thickness>
+			<x:Double x:Key="TabViewItemMinHeight">32</x:Double>
 
 			<wctconverters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
 
