@@ -360,7 +360,7 @@
 			<!--  Sidebar Content  -->
 			<controls:SidebarView.SidebarContent>
 				<Border
-					Margin="6,8,6,6"
+					Margin="6,8,0,6"
 					Background="#FFF1F6FA"
 					BorderBrush="#FF7F9DB9"
 					BorderThickness="1"
