@@ -68,7 +68,17 @@
 
 		-->
 
-		<Setter Property="Background" Value="#FF005AF5" />
+		<!-- The active XP blue remains #005AF5 at mid-band, with a top highlight and lower edge. -->
+		<Setter Property="Background">
+			<Setter.Value>
+				<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+					<GradientStop Offset="0" Color="#FF4B98FF" />
+					<GradientStop Offset="0.12" Color="#FF1C73EE" />
+					<GradientStop Offset="0.58" Color="#FF005AF5" />
+					<GradientStop Offset="1" Color="#FF0044B5" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
 
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 
@@ -80,8 +90,10 @@
 
 		<Setter Property="BorderThickness" Value="1,1,1,0" />
 
-		<Setter Property="BorderBrush" Value="#FF5E7C96" />
-		<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+		<Setter Property="BorderBrush" Value="#FF003C9D" />
+		<Setter Property="FontFamily" Value="Tahoma, Segoe UI" />
+		<Setter Property="FontWeight" Value="SemiBold" />
+		<Setter Property="FontSize" Value="12" />
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="TabViewItem">
@@ -171,14 +183,21 @@
 
 							Padding="8,0,6,0"
 
-							Background="{TemplateBinding Background}"
-
 							BorderBrush="{TemplateBinding BorderBrush}"
 
 							BorderThickness="{TemplateBinding BorderThickness}"
 							Control.IsTemplateFocusTarget="True"
 							CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CornerRadius, Converter={StaticResource TopCornerRadiusFilterConverter}}"
 							FocusVisualMargin="{TemplateBinding FocusVisualMargin}">
+
+							<Grid.Background>
+								<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+									<GradientStop Offset="0" Color="#FF4B98FF" />
+									<GradientStop Offset="0.12" Color="#FF1C73EE" />
+									<GradientStop Offset="0.58" Color="#FF005AF5" />
+									<GradientStop Offset="1" Color="#FF0044B5" />
+								</LinearGradientBrush>
+							</Grid.Background>
 
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition x:Name="IconColumn" Width="Auto" />
@@ -220,8 +239,9 @@
 								Content=""
 								ContentTemplate="{TemplateBinding HeaderTemplate}"
 								ContentTransitions="{TemplateBinding ContentTransitions}"
-								FontSize="{ThemeResource TabViewItemHeaderFontSize}"
-								FontWeight="{TemplateBinding FontWeight}"
+								FontFamily="Tahoma, Segoe UI"
+								FontSize="12"
+								FontWeight="SemiBold"
 								Foreground="#FFF2F6FE"
 								HighContrastAdjustment="None"
 								OpticalMarginAlignment="TrimSideBearings" />

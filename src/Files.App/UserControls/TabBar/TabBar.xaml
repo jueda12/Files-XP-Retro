@@ -71,9 +71,21 @@
 		HorizontalAlignment="Stretch"
 		x:FieldModifier="public"
 		Height="38"
-		Background="#FF005AF5"
-		BorderBrush="#FF5E7C96"
+		BorderBrush="#FF003C9D"
 		BorderThickness="0,0,0,1">
+		<!--
+			Keep #005AF5 in the centre of the XP title band, but let the top highlight
+			and darker lower edge give the chrome the rounded, illuminated finish seen
+			in Explorer instead of a single flat fill.
+		-->
+		<Border.Background>
+			<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+				<GradientStop Offset="0" Color="#FF54A3FF" />
+				<GradientStop Offset="0.10" Color="#FF2B82F6" />
+				<GradientStop Offset="0.53" Color="#FF005AF5" />
+				<GradientStop Offset="1" Color="#FF0049BE" />
+			</LinearGradientBrush>
+		</Border.Background>
 
 		<!--  TabBar + Draggable Right Padding  -->
 		<TabView

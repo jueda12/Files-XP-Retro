@@ -171,36 +171,37 @@
 				Background="#FFF3F0E6"
 				BorderBrush="#FFC6C2B8"
 				BorderThickness="0,0,0,1">
-				<MenuBar
-					Height="28"
-					VerticalAlignment="Top"
-					VerticalContentAlignment="Center"
-					Padding="4,0"
-					FontFamily="Tahoma, Segoe UI"
-					FontSize="12">
-				<MenuBarItem Title="File" VerticalContentAlignment="Center">
-					<MenuFlyoutItem Command="{x:Bind Commands.RefreshItems}" Text="Refresh" />
-				</MenuBarItem>
-				<MenuBarItem Title="Edit" VerticalContentAlignment="Center">
-					<MenuFlyoutItem Command="{x:Bind Commands.SelectAll}" Text="Select All" />
-					<MenuFlyoutItem Command="{x:Bind Commands.ClearSelection}" Text="Clear Selection" />
-				</MenuBarItem>
-				<MenuBarItem Title="View" VerticalContentAlignment="Center">
-					<MenuFlyoutItem Command="{x:Bind Commands.LayoutDetails}" Text="Details" />
-					<MenuFlyoutItem Command="{x:Bind Commands.LayoutList}" Text="List" />
-					<MenuFlyoutItem Command="{x:Bind Commands.LayoutGrid}" Text="Icons" />
-				</MenuBarItem>
-				<MenuBarItem Title="Favorites" VerticalContentAlignment="Center">
-					<MenuFlyoutItem Command="{x:Bind Commands.NavigateUp}" Text="Up One Level" />
-				</MenuBarItem>
-				<MenuBarItem Title="Tools" VerticalContentAlignment="Center">
-					<MenuFlyoutItem Command="{x:Bind Commands.Search}" Text="Search" />
-					<MenuFlyoutItem Command="{x:Bind Commands.ToggleInfoPane}" Text="Folder Options" />
-				</MenuBarItem>
-				<MenuBarItem Title="Help" VerticalContentAlignment="Center">
-					<MenuFlyoutItem Command="{x:Bind Commands.OpenCommandPalette}" Text="Command Palette" />
-				</MenuBarItem>
-				</MenuBar>
+				<!--
+					MenuBarItem exposes only its outer control geometry; its internal ContentButton
+					still places the glyph below this 28px XP row. These direct buttons own the
+					visible TextBlock layout, so its 14px text line is centred at y=14 exactly.
+				-->
+				<StackPanel Height="28" Orientation="Horizontal" Padding="4,0">
+					<Button Height="28" MinWidth="0" Padding="8,0" Background="Transparent" BorderThickness="0">
+						<TextBlock Height="14" VerticalAlignment="Center" FontFamily="Tahoma, Segoe UI" FontSize="12" FontWeight="Normal" LineHeight="14" LineStackingStrategy="BlockLineHeight" Text="File" TextLineBounds="Full" />
+						<Button.Flyout><MenuFlyout Placement="BottomEdgeAlignedLeft"><MenuFlyoutItem Command="{x:Bind Commands.RefreshItems}" Text="Refresh" /></MenuFlyout></Button.Flyout>
+					</Button>
+					<Button Height="28" MinWidth="0" Padding="8,0" Background="Transparent" BorderThickness="0">
+						<TextBlock Height="14" VerticalAlignment="Center" FontFamily="Tahoma, Segoe UI" FontSize="12" FontWeight="Normal" LineHeight="14" LineStackingStrategy="BlockLineHeight" Text="Edit" TextLineBounds="Full" />
+						<Button.Flyout><MenuFlyout Placement="BottomEdgeAlignedLeft"><MenuFlyoutItem Command="{x:Bind Commands.SelectAll}" Text="Select All" /><MenuFlyoutItem Command="{x:Bind Commands.ClearSelection}" Text="Clear Selection" /></MenuFlyout></Button.Flyout>
+					</Button>
+					<Button Height="28" MinWidth="0" Padding="8,0" Background="Transparent" BorderThickness="0">
+						<TextBlock Height="14" VerticalAlignment="Center" FontFamily="Tahoma, Segoe UI" FontSize="12" FontWeight="Normal" LineHeight="14" LineStackingStrategy="BlockLineHeight" Text="View" TextLineBounds="Full" />
+						<Button.Flyout><MenuFlyout Placement="BottomEdgeAlignedLeft"><MenuFlyoutItem Command="{x:Bind Commands.LayoutDetails}" Text="Details" /><MenuFlyoutItem Command="{x:Bind Commands.LayoutList}" Text="List" /><MenuFlyoutItem Command="{x:Bind Commands.LayoutGrid}" Text="Icons" /></MenuFlyout></Button.Flyout>
+					</Button>
+					<Button Height="28" MinWidth="0" Padding="8,0" Background="Transparent" BorderThickness="0">
+						<TextBlock Height="14" VerticalAlignment="Center" FontFamily="Tahoma, Segoe UI" FontSize="12" FontWeight="Normal" LineHeight="14" LineStackingStrategy="BlockLineHeight" Text="Favorites" TextLineBounds="Full" />
+						<Button.Flyout><MenuFlyout Placement="BottomEdgeAlignedLeft"><MenuFlyoutItem Command="{x:Bind Commands.NavigateUp}" Text="Up One Level" /></MenuFlyout></Button.Flyout>
+					</Button>
+					<Button Height="28" MinWidth="0" Padding="8,0" Background="Transparent" BorderThickness="0">
+						<TextBlock Height="14" VerticalAlignment="Center" FontFamily="Tahoma, Segoe UI" FontSize="12" FontWeight="Normal" LineHeight="14" LineStackingStrategy="BlockLineHeight" Text="Tools" TextLineBounds="Full" />
+						<Button.Flyout><MenuFlyout Placement="BottomEdgeAlignedLeft"><MenuFlyoutItem Command="{x:Bind Commands.Search}" Text="Search" /><MenuFlyoutItem Command="{x:Bind Commands.ToggleInfoPane}" Text="Folder Options" /></MenuFlyout></Button.Flyout>
+					</Button>
+					<Button Height="28" MinWidth="0" Padding="8,0" Background="Transparent" BorderThickness="0">
+						<TextBlock Height="14" VerticalAlignment="Center" FontFamily="Tahoma, Segoe UI" FontSize="12" FontWeight="Normal" LineHeight="14" LineStackingStrategy="BlockLineHeight" Text="Help" TextLineBounds="Full" />
+						<Button.Flyout><MenuFlyout Placement="BottomEdgeAlignedLeft"><MenuFlyoutItem Command="{x:Bind Commands.OpenCommandPalette}" Text="Command Palette" /></MenuFlyout></Button.Flyout>
+					</Button>
+				</StackPanel>
 			</Border>
 		</ScrollViewer>
 
