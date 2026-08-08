@@ -71,7 +71,7 @@
 		HorizontalAlignment="Stretch"
 		x:FieldModifier="public"
 		Height="38"
-		Background="#FF7FB2E5"
+		Background="#FF005AF5"
 		BorderBrush="#FF5E7C96"
 		BorderThickness="0,0,0,1">
 

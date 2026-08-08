@@ -45,8 +45,14 @@
 			<SolidColorBrush x:Key="AccentTextFillColorPrimaryBrush" Color="#FF003399" />
 			<SolidColorBrush x:Key="DividerStrokeColorDefaultBrush" Color="#FFC6C2B8" />
 
-			<!-- WinUI's MenuBarItem template puts Title in ContentButton and reads this resource for its padding. -->
-			<Thickness x:Key="MenuBarItemButtonPadding">8,5,8,3</Thickness>
+			<!--
+				WinUI's MenuBarItem template stretches ContentButton vertically. The default
+				4px top/bottom item margin shrinks the active item below this fixed 28px menu
+				row, shifting its UIA/control center down by 2px. Keep the item full-height;
+				ContentButton then centers the title without a padding offset.
+			-->
+			<Thickness x:Key="MenuBarItemMargin">4,0,4,0</Thickness>
+			<Thickness x:Key="MenuBarItemButtonPadding">8,0,8,0</Thickness>
 		</ResourceDictionary>
 	</ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>

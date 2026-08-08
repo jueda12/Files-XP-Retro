@@ -68,7 +68,7 @@
 
 		-->
 
-		<Setter Property="Background" Value="#FFB8D8F5" />
+		<Setter Property="Background" Value="#FF005AF5" />
 
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 
@@ -222,7 +222,7 @@
 								ContentTransitions="{TemplateBinding ContentTransitions}"
 								FontSize="{ThemeResource TabViewItemHeaderFontSize}"
 								FontWeight="{TemplateBinding FontWeight}"
-								Foreground="{ThemeResource TabViewItemHeaderForeground}"
+								Foreground="#FFF2F6FE"
 								HighContrastAdjustment="None"
 								OpticalMarginAlignment="TrimSideBearings" />
 
@@ -244,7 +244,7 @@
 								<VisualState x:Name="PointerOver">
 									<VisualState.Setters>
 										<Setter Target="TabContainer.Background" Value="#FFCBE4FA" />
-										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundPointerOver}" />
+										<Setter Target="ContentPresenter.Foreground" Value="#FFF2F6FE" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundPointerOver}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderPointerOverCloseButtonBackground}" />
 										<Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderPointerOverCloseButtonForeground}" />
@@ -255,7 +255,7 @@
 								<VisualState x:Name="Pressed">
 									<VisualState.Setters>
 										<Setter Target="TabContainer.Background" Value="#FFA9CDEA" />
-										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundPressed}" />
+										<Setter Target="ContentPresenter.Foreground" Value="#FFF2F6FE" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundPressed}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderPressedCloseButtonBackground}" />
 										<Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderPressedCloseButtonForeground}" />
@@ -274,7 +274,7 @@
 										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
 										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
 										<Setter Target="TabContainer.Padding" Value="8,0,6,0" />
-										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundSelected}" />
+										<Setter Target="ContentPresenter.Foreground" Value="#FFF2F6FE" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundSelected}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />
 										<Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonForeground}" />
@@ -294,7 +294,7 @@
 										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
 										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
 										<Setter Target="TabContainer.Padding" Value="8,0,6,0" />
-										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundSelected}" />
+										<Setter Target="ContentPresenter.Foreground" Value="#FFF2F6FE" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundSelected}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />
 										<Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonForeground}" />
@@ -315,7 +315,7 @@
 										<Setter Target="TabContainer.BorderBrush" Value="#FF5E7C96" />
 										<Setter Target="TabContainer.BorderThickness" Value="1,1,1,0" />
 										<Setter Target="TabContainer.Padding" Value="8,0,6,0" />
-										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundSelected}" />
+										<Setter Target="ContentPresenter.Foreground" Value="#FFF2F6FE" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundSelected}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />
 										<Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonForeground}" />
@@ -332,7 +332,7 @@
 									<VisualState.Setters>
 										<Setter Target="TabContainer.Background" Value="#FFDCE8F3" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundDisabled}" />
-										<Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundDisabled}" />
+										<Setter Target="ContentPresenter.Foreground" Value="#FFF2F6FE" />
 										<Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewButtonForegroundDisabled}" />
 										<Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderDisabledCloseButtonBackground}" />
 										<Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderDisabledCloseButtonForeground}" />
