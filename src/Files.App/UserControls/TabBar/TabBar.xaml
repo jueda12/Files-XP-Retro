@@ -66,28 +66,30 @@
 	</local:BaseTabBar.Resources>
 
 	<!--  TODO: Use TitleBar of WinAppSdk 1.6 when available  -->
-	<Border
+	<Grid
 		x:Name="TitlebarArea"
 		HorizontalAlignment="Stretch"
 		x:FieldModifier="public"
-		Height="38"
-		BorderBrush="#FF003C9D"
-		BorderThickness="0,0,0,1">
-		<!--
-			Keep #005AF5 in the centre of the XP title band, but let the top highlight
-			and darker lower edge give the chrome the rounded, illuminated finish seen
-			in Explorer instead of a single flat fill.
-		-->
-		<Border.Background>
-			<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-				<GradientStop Offset="0" Color="#FF54A3FF" />
-				<GradientStop Offset="0.10" Color="#FF2B82F6" />
-				<GradientStop Offset="0.53" Color="#FF005AF5" />
-				<GradientStop Offset="1" Color="#FF0049BE" />
-			</LinearGradientBrush>
-		</Border.Background>
+		Height="66">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="28" />
+			<RowDefinition Height="38" />
+		</Grid.RowDefinitions>
+
+		<!-- Keep the Luna caption independent of the neutral Explorer tab strip. -->
+		<Border Grid.Row="0" BorderBrush="#FF003C9D" BorderThickness="0,0,0,1">
+			<Border.Background>
+				<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+					<GradientStop Offset="0" Color="#FF54A3FF" />
+					<GradientStop Offset="0.10" Color="#FF2B82F6" />
+					<GradientStop Offset="0.53" Color="#FF005AF5" />
+					<GradientStop Offset="1" Color="#FF0049BE" />
+				</LinearGradientBrush>
+			</Border.Background>
+		</Border>
 
 		<!--  TabBar + Draggable Right Padding  -->
+		<Border Grid.Row="1" Background="#FFF3F0E6" BorderBrush="#FFC6C2B8" BorderThickness="0,0,0,1">
 		<TabView
 			x:Name="HorizontalTabView"
 			Margin="0"
@@ -286,6 +288,7 @@
 			</TabView.TabStripFooter>
 
 		</TabView>
-	</Border>
+		</Border>
+	</Grid>
 
 </local:BaseTabBar>
