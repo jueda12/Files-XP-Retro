@@ -303,10 +303,12 @@
 								<VisualState x:Name="Unselected" />
 								<VisualState x:Name="Selected">
 									<VisualState.Setters>
+										<!-- XP Retro: avoid WinUI-style selected color blocks on the right side of the sidebar. -->
 										<Setter Target="SelectionIndicator.Opacity" Value="0" />
-										<Setter Target="ElementGrid.BorderBrush" Value="#FF316AC5" />
-										<Setter Target="ElementGrid.Background" Value="#FF316AC5" />
-										<Setter Target="ItemNameTextBlock.Foreground" Value="White" />
+										<Setter Target="ElementGrid.BorderBrush" Value="Transparent" />
+										<Setter Target="ElementGrid.Background" Value="Transparent" />
+										<Setter Target="ItemNameTextBlock.Foreground" Value="#FF0A246A" />
+										<Setter Target="ItemNameTextBlock.FontWeight" Value="SemiBold" />
 									</VisualState.Setters>
 								</VisualState>
 							</VisualStateGroup>
@@ -315,9 +317,10 @@
 								<VisualState x:Name="Normal" />
 								<VisualState x:Name="NormalSelected">
 									<VisualState.Setters>
-										<Setter Target="ElementGrid.Background" Value="#FF316AC5" />
-										<Setter Target="ElementGrid.BorderBrush" Value="#FF316AC5" />
-										<Setter Target="ItemNameTextBlock.Foreground" Value="White" />
+										<Setter Target="ElementGrid.Background" Value="Transparent" />
+										<Setter Target="ElementGrid.BorderBrush" Value="Transparent" />
+										<Setter Target="ItemNameTextBlock.Foreground" Value="#FF0A246A" />
+										<Setter Target="ItemNameTextBlock.FontWeight" Value="SemiBold" />
 									</VisualState.Setters>
 								</VisualState>
 								<VisualState x:Name="PointerOver">
@@ -328,9 +331,10 @@
 								</VisualState>
 								<VisualState x:Name="PointerOverSelected">
 									<VisualState.Setters>
-										<Setter Target="ElementGrid.Background" Value="#FF0A246A" />
-										<Setter Target="ElementGrid.BorderBrush" Value="#FF0A246A" />
-										<Setter Target="ItemNameTextBlock.Foreground" Value="White" />
+										<Setter Target="ElementGrid.Background" Value="#FFD6E7FF" />
+										<Setter Target="ElementGrid.BorderBrush" Value="#FF7F9DB9" />
+										<Setter Target="ItemNameTextBlock.Foreground" Value="#FF0A246A" />
+										<Setter Target="ItemNameTextBlock.FontWeight" Value="SemiBold" />
 									</VisualState.Setters>
 								</VisualState>
 								<VisualState x:Name="Pressed">
@@ -341,9 +345,10 @@
 								</VisualState>
 								<VisualState x:Name="PressedSelected">
 									<VisualState.Setters>
-										<Setter Target="ElementGrid.Background" Value="#FF0A246A" />
-										<Setter Target="ElementGrid.BorderBrush" Value="#FF0A246A" />
-										<Setter Target="ItemNameTextBlock.Foreground" Value="White" />
+										<Setter Target="ElementGrid.Background" Value="#FFC1D2EE" />
+										<Setter Target="ElementGrid.BorderBrush" Value="#FF7F9DB9" />
+										<Setter Target="ItemNameTextBlock.Foreground" Value="#FF0A246A" />
+										<Setter Target="ItemNameTextBlock.FontWeight" Value="SemiBold" />
 									</VisualState.Setters>
 								</VisualState>
 

@@ -16,7 +16,7 @@
     <Identity
         Name="FilesDev"
         Publisher="CN=Files"
-        Version="4.2.2.5" />
+        Version="4.2.2.6" />
 
     <Properties>
         <DisplayName>Files XP Retro</DisplayName>
