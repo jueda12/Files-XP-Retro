@@ -6,7 +6,7 @@ using Files.Shared.Utils;
 namespace Files.App.Data.Items
 {
 	[Bindable(true)]
-	public sealed partial class ShelfItem : ObservableObject, IWrapper<IStorableChild>, IAsyncInitialize
+	public sealed partial class ShelfItem : ObservableObject, IAsyncInitialize
 	{
 		private readonly IImageService _imageService;
 		private readonly ICollection<ShelfItem> _sourceCollection;

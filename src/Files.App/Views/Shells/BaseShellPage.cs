@@ -1,4 +1,4 @@
-﻿// Copyright (c) Files Community
+// Copyright (c) Files Community
 // Licensed under the MIT License.
 
 using Microsoft.UI.Input;
@@ -20,6 +20,7 @@ namespace Files.App.Views.Shells
 		private readonly DispatcherQueueTimer _updateDateDisplayTimer;
 
 		private DateTimeFormats _lastDateTimeFormats;
+		private int _lastDateDisplayMinute = -1;
 
 		private Task _gitFetch = Task.CompletedTask;
 
@@ -195,7 +196,7 @@ namespace Files.App.Views.Shells
 			GitHelpers.GitFetchCompleted += FilesystemViewModel_GitDirectoryUpdated;
 
 			_updateDateDisplayTimer = DispatcherQueue.CreateTimer();
-			_updateDateDisplayTimer.Interval = TimeSpan.FromSeconds(1);
+			_updateDateDisplayTimer.Interval = TimeSpan.FromSeconds(15); // ponytail: clock/status text does not need a per-tab 1s UI wakeup.
 			_updateDateDisplayTimer.Tick += UpdateDateDisplayTimer_Tick;
 			_lastDateTimeFormats = userSettingsService.GeneralSettingsService.DateTimeFormat;
 			_updateDateDisplayTimer.Start();
@@ -775,13 +776,14 @@ namespace Files.App.Views.Shells
 			if (App.AppModel.IsMainWindowClosed)
 				return;
 
-			if (userSettingsService.GeneralSettingsService.DateTimeFormat != _lastDateTimeFormats)
+			var currentFormat = userSettingsService.GeneralSettingsService.DateTimeFormat;
+			var currentMinute = DateTimeOffset.Now.Minute;
+
+			if (currentFormat != _lastDateTimeFormats ||
+				(currentFormat == DateTimeFormats.Application && currentMinute != _lastDateDisplayMinute))
 			{
-				_lastDateTimeFormats = userSettingsService.GeneralSettingsService.DateTimeFormat;
-				ShellViewModel?.UpdateDateDisplay();
-			}
-			else if (userSettingsService.GeneralSettingsService.DateTimeFormat == DateTimeFormats.Application)
-			{
+				_lastDateTimeFormats = currentFormat;
+				_lastDateDisplayMinute = currentMinute;
 				ShellViewModel?.UpdateDateDisplay();
 			}
 		}

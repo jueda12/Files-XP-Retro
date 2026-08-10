@@ -31,6 +31,7 @@ namespace Files.App.Controls
 		private bool isTemplateWired;
 		private DispatcherQueueTimer? dragOverTimer;
 		private DispatcherQueueTimer? dragOverExpandTimer;
+		private SidebarItemDropPosition? lastDragOverPosition;
 
 		public SidebarItem()
 		{
@@ -479,9 +480,14 @@ namespace Files.App.Controls
 			}
 		}
 
-		private async void ItemBorder_DragOver(object sender, DragEventArgs e)
+		private void ItemBorder_DragOver(object sender, DragEventArgs e)
 		{
 			var insertsAbove = DetermineDropTargetPosition(e);
+			if (lastDragOverPosition == insertsAbove)
+				return; // ponytail: WinUI fires drag-over constantly; same row/position has no new UI work.
+
+			lastDragOverPosition = insertsAbove;
+
 			if (insertsAbove == SidebarItemDropPosition.Center)
 			{
 				VisualStateManager.GoToState(this, "DragOnTop", true);
@@ -544,6 +550,7 @@ namespace Files.App.Controls
 
 		private void ItemBorder_DragLeave(object sender, DragEventArgs e)
 		{
+			lastDragOverPosition = null;
 			dragOverTimer?.Stop();
 			dragOverExpandTimer?.Stop();
 			UpdatePointerState();
@@ -551,6 +558,7 @@ namespace Files.App.Controls
 
 		private void ItemBorder_Drop(object sender, DragEventArgs e)
 		{
+			lastDragOverPosition = null;
 			dragOverTimer?.Stop();
 			dragOverExpandTimer?.Stop();
 			UpdatePointerState();

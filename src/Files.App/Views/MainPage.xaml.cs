@@ -6,6 +6,7 @@ using Files.App.Controls;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Input;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
@@ -289,7 +290,8 @@ namespace Files.App.Views
 
 		private void Page_Loaded(object sender, RoutedEventArgs e)
 		{
-			MainWindow.Instance.AppWindow.Changed += (_, _) => MainWindow.Instance.RaiseSetTitleBarDragRegion(SetTitleBarDragRegion);
+			MainWindow.Instance.AppWindow.Changed -= AppWindow_Changed;
+			MainWindow.Instance.AppWindow.Changed += AppWindow_Changed;
 
 			// Defers the status bar loading until after the page has loaded to improve startup perf
 			FindName(nameof(StatusBar));
@@ -309,6 +311,12 @@ namespace Files.App.Views
 			{
 				DispatcherQueue.TryEnqueue(async () => await AppRunningAsAdminPromptAsync());
 			}
+		}
+
+		private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
+		{
+			if (args.DidSizeChange || args.DidPresenterChange)
+				MainWindow.Instance.RaiseSetTitleBarDragRegion(SetTitleBarDragRegion);
 		}
 
 		private void PreviewPane_Loaded(object sender, RoutedEventArgs e)

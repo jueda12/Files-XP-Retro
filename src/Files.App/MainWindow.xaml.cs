@@ -57,9 +57,6 @@ namespace Files.App
 			if (rootFrame is null)
 				return;
 
-			// Set system backdrop
-			SystemBackdrop = new AppSystemBackdrop();
-
 			switch (activatedEventArgs)
 			{
 				case ILaunchActivatedEventArgs launchArgs:
